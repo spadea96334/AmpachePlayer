@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,94 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AmpachePlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ampache_dark" translatesAutoresizingMaskIntoConstraints="NO" id="YaC-EH-Aes">
+                                <rect key="frame" x="79" y="325" width="256" height="256"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Qb-n6-Jum">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qhu-k7-gO3">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lmC-yI-JbA" userLabel="Account Text Field">
+                                            <rect key="frame" x="52" y="323" width="310.5" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7CU-sP-jqp" userLabel="Password Text Field">
+                                            <rect key="frame" x="52" y="377" width="310.5" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Server url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="suF-fJ-iaI" userLabel="Server Text Field">
+                                            <rect key="frame" x="52" y="431" width="310.5" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDW-da-PO5">
+                                            <rect key="frame" x="52" y="485" width="310.5" height="40"/>
+                                            <color key="backgroundColor" red="0.99215686270000003" green="0.54117647059999996" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                            <state key="normal" title="Login"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ampache Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQe-1R-cf7">
+                                            <rect key="frame" x="10" y="116.5" width="394" height="62.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="52"/>
+                                            <color key="textColor" red="0.99215686270000003" green="0.54117647059999996" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="minimumScaleFactor">
+                                                    <real key="value" value="0.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lmC-yI-JbA" firstAttribute="centerX" secondItem="qhu-k7-gO3" secondAttribute="centerX" id="88d-j7-UZn"/>
+                                        <constraint firstItem="oDW-da-PO5" firstAttribute="top" secondItem="suF-fJ-iaI" secondAttribute="bottom" constant="20" id="CQh-lS-TsQ"/>
+                                        <constraint firstItem="vQe-1R-cf7" firstAttribute="centerX" secondItem="qhu-k7-gO3" secondAttribute="centerX" id="JHU-Oh-b2N"/>
+                                        <constraint firstItem="suF-fJ-iaI" firstAttribute="top" secondItem="7CU-sP-jqp" secondAttribute="bottom" constant="20" id="O6i-kq-gZk"/>
+                                        <constraint firstItem="oDW-da-PO5" firstAttribute="width" secondItem="suF-fJ-iaI" secondAttribute="width" id="Ov2-Qd-wuv"/>
+                                        <constraint firstItem="7CU-sP-jqp" firstAttribute="width" secondItem="suF-fJ-iaI" secondAttribute="width" id="PbT-yx-eJ1"/>
+                                        <constraint firstItem="lmC-yI-JbA" firstAttribute="width" secondItem="suF-fJ-iaI" secondAttribute="width" id="QMz-Lc-teq"/>
+                                        <constraint firstItem="vQe-1R-cf7" firstAttribute="width" secondItem="qhu-k7-gO3" secondAttribute="width" constant="-20" id="YLf-Jl-fOq"/>
+                                        <constraint firstItem="7CU-sP-jqp" firstAttribute="centerX" secondItem="qhu-k7-gO3" secondAttribute="centerX" id="bgU-NZ-63o"/>
+                                        <constraint firstItem="oDW-da-PO5" firstAttribute="centerX" secondItem="qhu-k7-gO3" secondAttribute="centerX" id="cd1-s8-X8g"/>
+                                        <constraint firstItem="7CU-sP-jqp" firstAttribute="top" secondItem="lmC-yI-JbA" secondAttribute="bottom" constant="20" id="hoe-5U-fsx"/>
+                                        <constraint firstItem="suF-fJ-iaI" firstAttribute="width" secondItem="qhu-k7-gO3" secondAttribute="width" multiplier="0.75" id="lk0-no-tpR"/>
+                                        <constraint firstItem="vQe-1R-cf7" firstAttribute="centerY" secondItem="qhu-k7-gO3" secondAttribute="centerY" multiplier="0.33" id="oVG-Gj-7vJ"/>
+                                        <constraint firstItem="suF-fJ-iaI" firstAttribute="centerY" secondItem="qhu-k7-gO3" secondAttribute="centerY" id="qo3-1R-cI2"/>
+                                        <constraint firstItem="suF-fJ-iaI" firstAttribute="centerX" secondItem="qhu-k7-gO3" secondAttribute="centerX" id="zrD-Th-CZO"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="systemUltraThinMaterialLight"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YaC-EH-Aes" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="50S-wb-iC5"/>
+                            <constraint firstItem="7Qb-n6-Jum" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6y0-Iu-0Hb"/>
+                            <constraint firstItem="7Qb-n6-Jum" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="VTs-rB-RhL"/>
+                            <constraint firstItem="YaC-EH-Aes" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gI5-n0-d2j"/>
+                            <constraint firstItem="7Qb-n6-Jum" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="itm-jS-fQV"/>
+                            <constraint firstItem="7Qb-n6-Jum" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="rrR-Do-0cL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ampache_dark" width="256" height="256"/>
+    </resources>
 </document>
