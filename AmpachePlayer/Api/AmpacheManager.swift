@@ -4,6 +4,11 @@ class AmpacheManager: NSObject {
     
     public static let sharedInstance = AmpacheManager.init()
     private(set) var isLogin = false
+    var songCount: Int {
+        get{
+            return (self.handshakeModel == nil) ? 0 : self.handshakeModel!.songs
+        }
+    }
     
     let session = URLSession.init(configuration: URLSessionConfiguration.default)
     var serverUrl: String?

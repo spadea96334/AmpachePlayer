@@ -20,6 +20,7 @@
 		BE837B922511B8BA00BACA5D /* AmpacheRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B912511B8BA00BACA5D /* AmpacheRequestBuilder.swift */; };
 		BE837B942511C3B800BACA5D /* HandshakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B932511C3B800BACA5D /* HandshakeModel.swift */; };
 		BE837B962511C4F700BACA5D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B952511C4F700BACA5D /* ErrorModel.swift */; };
+		BE837B9D2512072D00BACA5D /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B9C2512072D00BACA5D /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		BE837B912511B8BA00BACA5D /* AmpacheRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpacheRequestBuilder.swift; sourceTree = "<group>"; };
 		BE837B932511C3B800BACA5D /* HandshakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeModel.swift; sourceTree = "<group>"; };
 		BE837B952511C4F700BACA5D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		BE837B9C2512072D00BACA5D /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				BE1F29AA2510B56C00BFB536 /* Api */,
 				BE1F297A2510A12500BFB536 /* AppDelegate.swift */,
+				BE837B9C2512072D00BACA5D /* PlayerViewController.swift */,
 				BE1F297C2510A12500BFB536 /* SceneDelegate.swift */,
 				BE1F297E2510A12500BFB536 /* ViewController.swift */,
 				BE1F29802510A12500BFB536 /* Main.storyboard */,
@@ -307,6 +310,7 @@
 				BE837B922511B8BA00BACA5D /* AmpacheRequestBuilder.swift in Sources */,
 				BE1F297F2510A12500BFB536 /* ViewController.swift in Sources */,
 				BE1F297B2510A12500BFB536 /* AppDelegate.swift in Sources */,
+				BE837B9D2512072D00BACA5D /* PlayerViewController.swift in Sources */,
 				BE837B942511C3B800BACA5D /* HandshakeModel.swift in Sources */,
 				BE837B962511C4F700BACA5D /* ErrorModel.swift in Sources */,
 				BE1F297D2510A12500BFB536 /* SceneDelegate.swift in Sources */,
