@@ -15,6 +15,11 @@
 		BE1F29872510A12500BFB536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1F29852510A12500BFB536 /* LaunchScreen.storyboard */; };
 		BE1F29922510A12500BFB536 /* AmpachePlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F29912510A12500BFB536 /* AmpachePlayerTests.swift */; };
 		BE1F299D2510A12500BFB536 /* AmpachePlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F299C2510A12500BFB536 /* AmpachePlayerUITests.swift */; };
+		BE1F29AC2510B5A100BFB536 /* AmpacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F29AB2510B5A100BFB536 /* AmpacheManager.swift */; };
+		BE1F29AE2510BA1000BFB536 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F29AD2510BA1000BFB536 /* LoginModel.swift */; };
+		BE837B922511B8BA00BACA5D /* AmpacheRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B912511B8BA00BACA5D /* AmpacheRequestBuilder.swift */; };
+		BE837B942511C3B800BACA5D /* HandshakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B932511C3B800BACA5D /* HandshakeModel.swift */; };
+		BE837B962511C4F700BACA5D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B952511C4F700BACA5D /* ErrorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,13 @@
 		BE1F29982510A12500BFB536 /* AmpachePlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmpachePlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1F299C2510A12500BFB536 /* AmpachePlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpachePlayerUITests.swift; sourceTree = "<group>"; };
 		BE1F299E2510A12500BFB536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE1F29AB2510B5A100BFB536 /* AmpacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpacheManager.swift; sourceTree = "<group>"; };
+		BE1F29AD2510BA1000BFB536 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		BE1F29B12510BE5C00BFB536 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BE1F29B32510BEDE00BFB536 /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = System/Library/Frameworks/CryptoKit.framework; sourceTree = SDKROOT; };
+		BE837B912511B8BA00BACA5D /* AmpacheRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpacheRequestBuilder.swift; sourceTree = "<group>"; };
+		BE837B932511C3B800BACA5D /* HandshakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeModel.swift; sourceTree = "<group>"; };
+		BE837B952511C4F700BACA5D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +95,7 @@
 				BE1F29902510A12500BFB536 /* AmpachePlayerTests */,
 				BE1F299B2510A12500BFB536 /* AmpachePlayerUITests */,
 				BE1F29782510A12500BFB536 /* Products */,
+				BE1F29B02510BE5C00BFB536 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +112,7 @@
 		BE1F29792510A12500BFB536 /* AmpachePlayer */ = {
 			isa = PBXGroup;
 			children = (
+				BE1F29AA2510B56C00BFB536 /* Api */,
 				BE1F297A2510A12500BFB536 /* AppDelegate.swift */,
 				BE1F297C2510A12500BFB536 /* SceneDelegate.swift */,
 				BE1F297E2510A12500BFB536 /* ViewController.swift */,
@@ -126,6 +140,35 @@
 				BE1F299E2510A12500BFB536 /* Info.plist */,
 			);
 			path = AmpachePlayerUITests;
+			sourceTree = "<group>";
+		};
+		BE1F29AA2510B56C00BFB536 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				BE1F29AF2510BA1400BFB536 /* Model */,
+				BE1F29AB2510B5A100BFB536 /* AmpacheManager.swift */,
+				BE837B912511B8BA00BACA5D /* AmpacheRequestBuilder.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		BE1F29AF2510BA1400BFB536 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE1F29AD2510BA1000BFB536 /* LoginModel.swift */,
+				BE837B932511C3B800BACA5D /* HandshakeModel.swift */,
+				BE837B952511C4F700BACA5D /* ErrorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE1F29B02510BE5C00BFB536 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE1F29B32510BEDE00BFB536 /* CryptoKit.framework */,
+				BE1F29B12510BE5C00BFB536 /* Security.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +302,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1F29AE2510BA1000BFB536 /* LoginModel.swift in Sources */,
+				BE1F29AC2510B5A100BFB536 /* AmpacheManager.swift in Sources */,
+				BE837B922511B8BA00BACA5D /* AmpacheRequestBuilder.swift in Sources */,
 				BE1F297F2510A12500BFB536 /* ViewController.swift in Sources */,
 				BE1F297B2510A12500BFB536 /* AppDelegate.swift in Sources */,
+				BE837B942511C3B800BACA5D /* HandshakeModel.swift in Sources */,
+				BE837B962511C4F700BACA5D /* ErrorModel.swift in Sources */,
 				BE1F297D2510A12500BFB536 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AmpachePlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AmpachePlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

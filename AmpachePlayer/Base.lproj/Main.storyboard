@@ -45,6 +45,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                             <state key="normal" title="Login"/>
+                                            <connections>
+                                                <action selector="loginButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IhU-aW-vgy"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ampache Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQe-1R-cf7">
                                             <rect key="frame" x="10" y="116.5" width="394" height="62.5"/>
@@ -91,6 +94,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="accountTextField" destination="lmC-yI-JbA" id="dIf-s8-sKp"/>
+                        <outlet property="passwordTextField" destination="7CU-sP-jqp" id="e59-hU-Hem"/>
+                        <outlet property="serverTextField" destination="suF-fJ-iaI" id="m2m-Jb-mMd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
