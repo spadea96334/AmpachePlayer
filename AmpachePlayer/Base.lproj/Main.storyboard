@@ -136,7 +136,7 @@
                                                 <constraint firstItem="eVD-Y4-cCj" firstAttribute="top" secondItem="pKr-yK-lpj" secondAttribute="top" constant="5" id="aMq-tI-zon"/>
                                             </constraints>
                                         </view>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29a-Ib-ZFP">
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29a-Ib-ZFP">
                                             <rect key="frame" x="0.0" y="46" width="414" height="806"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <prototypes>
@@ -149,6 +149,7 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ll7-u4-bjB">
                                                                 <rect key="frame" x="5" y="10" width="88" height="24"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -172,6 +173,7 @@
                                             </connections>
                                         </tableView>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="29a-Ib-ZFP" secondAttribute="bottom" id="Kpb-8a-LaL"/>
                                         <constraint firstItem="29a-Ib-ZFP" firstAttribute="top" secondItem="pKr-yK-lpj" secondAttribute="bottom" id="OS0-xL-MPS"/>
@@ -184,7 +186,7 @@
                                 <constraints>
                                     <constraint firstItem="pKr-yK-lpj" firstAttribute="top" secondItem="Fvx-R3-Av6" secondAttribute="top" id="DaS-Vh-fIZ"/>
                                 </constraints>
-                                <blurEffect style="regular"/>
+                                <blurEffect style="systemUltraThinMaterialLight"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
