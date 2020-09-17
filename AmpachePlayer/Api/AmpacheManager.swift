@@ -20,7 +20,7 @@ class AmpacheManager: NSObject {
     
     public func login(model: LoginModel, completionHandler: @escaping (ErrorModel?) -> Void) {
         self.serverUrl = model.serverUrl
-        let requestBuilder = AmpacheRequestBuilder.init(url: self.serverUrl!)
+        let requestBuilder = AmpacheRequestBuilder.init(action: AmpacheRequestBuilder.Action.handshake, url: self.serverUrl!)
         _ = requestBuilder.setLoginInfo(model: model)
         guard let request = requestBuilder.build() else {return}
         

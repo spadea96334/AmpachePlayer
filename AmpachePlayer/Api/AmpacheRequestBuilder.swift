@@ -2,20 +2,25 @@ import Foundation
 
 class AmpacheRequestBuilder: NSObject {
     
+    public enum Action: String {
+        case handshake = "handshake"
+    }
+    
     private var urlcomponents: URLComponents!
     private var queryItems: [URLQueryItem] = []
     private let apiVersion = "422000"
     
-    init(url: String) {
+    init(action: Action , url: String) {
         self.urlcomponents = URLComponents.init(string: url)
         super.init()
         self.urlcomponents.path = "/server/json.server.php"
+        
+        self.queryItems.append(URLQueryItem.init(name: "action", value: action.rawValue))
     }
     
     public func setLoginInfo(model: LoginModel) -> AmpacheRequestBuilder {
         let timestamp = "\(Int(Date().timeIntervalSince1970))"
         
-        self.queryItems.append(URLQueryItem.init(name: "action", value: "handshake"))
         self.queryItems.append(URLQueryItem.init(name: "user", value: model.account))
         self.queryItems.append(URLQueryItem.init(name: "auth", value: model.getHashPassword(timestamp: timestamp)))
         self.queryItems.append(URLQueryItem.init(name: "timestamp", value: timestamp))
