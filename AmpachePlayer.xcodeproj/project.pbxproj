@@ -121,12 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				BE1F29AA2510B56C00BFB536 /* Api */,
+				BE6C219A251345AC00A29372 /* UI */,
 				BE1F297A2510A12500BFB536 /* AppDelegate.swift */,
-				BE837B9C2512072D00BACA5D /* SongListViewController.swift */,
-				BE6C219825133C5300A29372 /* PlayerViewController.swift */,
 				BE1F297C2510A12500BFB536 /* SceneDelegate.swift */,
-				BE6C219625132DA200A29372 /* SongCell.swift */,
-				BE1F297E2510A12500BFB536 /* ViewController.swift */,
 				BE1F29802510A12500BFB536 /* Main.storyboard */,
 				BE1F29832510A12500BFB536 /* Assets.xcassets */,
 				BE1F29852510A12500BFB536 /* LaunchScreen.storyboard */,
@@ -181,6 +178,17 @@
 				BE1F29B12510BE5C00BFB536 /* Security.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE6C219A251345AC00A29372 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BE6C219825133C5300A29372 /* PlayerViewController.swift */,
+				BE6C219625132DA200A29372 /* SongCell.swift */,
+				BE837B9C2512072D00BACA5D /* SongListViewController.swift */,
+				BE1F297E2510A12500BFB536 /* ViewController.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
