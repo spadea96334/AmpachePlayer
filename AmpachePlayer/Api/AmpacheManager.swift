@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 class AmpacheManager: NSObject {
     
@@ -44,6 +45,20 @@ class AmpacheManager: NSObject {
             }
             
             print("No expect condition in login process")
+        }
+        
+        dataTask.resume()
+    }
+    
+    public func getArt(song: SongModel, completionHandler: @escaping (UIImage?) -> Void) {
+        guard let artUrl = URL.init(string: song.art) else { return }
+        
+        let dataTask = self.session.dataTask(with: artUrl) { (data: Data?, response: URLResponse?, error: Error?) in
+            if error != nil || data == nil {
+                completionHandler(nil)
+            }
+            
+            completionHandler(UIImage.init(data: data!))
         }
         
         dataTask.resume()
