@@ -10,11 +10,10 @@ class AmpacheRequestBuilder: NSObject {
     private var queryItems: [URLQueryItem] = []
     private let apiVersion = "422000"
     
-    init(action: Action , url: String) {
+    init(action: Action, url: String) {
         self.urlcomponents = URLComponents.init(string: url)
         super.init()
         self.urlcomponents.path = "/server/json.server.php"
-        
         self.queryItems.append(URLQueryItem.init(name: "action", value: action.rawValue))
     }
     
