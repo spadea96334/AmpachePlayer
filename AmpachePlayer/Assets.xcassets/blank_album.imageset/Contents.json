@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "blankalbum.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

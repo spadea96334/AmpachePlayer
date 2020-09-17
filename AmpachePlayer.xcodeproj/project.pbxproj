@@ -19,10 +19,11 @@
 		BE1F29AE2510BA1000BFB536 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F29AD2510BA1000BFB536 /* LoginModel.swift */; };
 		BE6C21952513162E00A29372 /* SongListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C21942513162E00A29372 /* SongListModel.swift */; };
 		BE6C219725132DA200A29372 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C219625132DA200A29372 /* SongCell.swift */; };
+		BE6C219925133C5300A29372 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C219825133C5300A29372 /* PlayerViewController.swift */; };
 		BE837B922511B8BA00BACA5D /* AmpacheRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B912511B8BA00BACA5D /* AmpacheRequestBuilder.swift */; };
 		BE837B942511C3B800BACA5D /* HandshakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B932511C3B800BACA5D /* HandshakeModel.swift */; };
 		BE837B962511C4F700BACA5D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B952511C4F700BACA5D /* ErrorModel.swift */; };
-		BE837B9D2512072D00BACA5D /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B9C2512072D00BACA5D /* PlayerViewController.swift */; };
+		BE837B9D2512072D00BACA5D /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B9C2512072D00BACA5D /* SongListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,10 +64,11 @@
 		BE1F29B32510BEDE00BFB536 /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = System/Library/Frameworks/CryptoKit.framework; sourceTree = SDKROOT; };
 		BE6C21942513162E00A29372 /* SongListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListModel.swift; sourceTree = "<group>"; };
 		BE6C219625132DA200A29372 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
+		BE6C219825133C5300A29372 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		BE837B912511B8BA00BACA5D /* AmpacheRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpacheRequestBuilder.swift; sourceTree = "<group>"; };
 		BE837B932511C3B800BACA5D /* HandshakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeModel.swift; sourceTree = "<group>"; };
 		BE837B952511C4F700BACA5D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
-		BE837B9C2512072D00BACA5D /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		BE837B9C2512072D00BACA5D /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +122,8 @@
 			children = (
 				BE1F29AA2510B56C00BFB536 /* Api */,
 				BE1F297A2510A12500BFB536 /* AppDelegate.swift */,
-				BE837B9C2512072D00BACA5D /* PlayerViewController.swift */,
+				BE837B9C2512072D00BACA5D /* SongListViewController.swift */,
+				BE6C219825133C5300A29372 /* PlayerViewController.swift */,
 				BE1F297C2510A12500BFB536 /* SceneDelegate.swift */,
 				BE6C219625132DA200A29372 /* SongCell.swift */,
 				BE1F297E2510A12500BFB536 /* ViewController.swift */,
@@ -316,8 +319,9 @@
 				BE1F29AC2510B5A100BFB536 /* AmpacheManager.swift in Sources */,
 				BE837B922511B8BA00BACA5D /* AmpacheRequestBuilder.swift in Sources */,
 				BE1F297F2510A12500BFB536 /* ViewController.swift in Sources */,
+				BE6C219925133C5300A29372 /* PlayerViewController.swift in Sources */,
 				BE1F297B2510A12500BFB536 /* AppDelegate.swift in Sources */,
-				BE837B9D2512072D00BACA5D /* PlayerViewController.swift in Sources */,
+				BE837B9D2512072D00BACA5D /* SongListViewController.swift in Sources */,
 				BE6C21952513162E00A29372 /* SongListModel.swift in Sources */,
 				BE837B942511C3B800BACA5D /* HandshakeModel.swift in Sources */,
 				BE837B962511C4F700BACA5D /* ErrorModel.swift in Sources */,

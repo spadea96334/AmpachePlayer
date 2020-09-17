@@ -98,25 +98,25 @@
                         <outlet property="accountTextField" destination="lmC-yI-JbA" id="dIf-s8-sKp"/>
                         <outlet property="passwordTextField" destination="7CU-sP-jqp" id="e59-hU-Hem"/>
                         <outlet property="serverTextField" destination="suF-fJ-iaI" id="m2m-Jb-mMd"/>
-                        <segue destination="usy-d4-Ko5" kind="presentation" identifier="ToPlayerSegue" modalPresentationStyle="fullScreen" id="Ndp-WY-HMp"/>
+                        <segue destination="ATV-mP-QdC" kind="presentation" identifier="ToPlayerSegue" modalPresentationStyle="fullScreen" id="mrh-Qg-HD2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
-        <!--Player View Controller-->
+        <!--Song List View Controller-->
         <scene sceneID="YyF-4U-Bo6">
             <objects>
-                <viewController id="usy-d4-Ko5" customClass="PlayerViewController" customModule="AmpachePlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="usy-d4-Ko5" customClass="SongListViewController" customModule="AmpachePlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eB9-Et-Vj0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVs-wP-rUv">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Fvx-R3-Av6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKr-yK-lpj" userLabel="Header View">
@@ -137,7 +137,7 @@
                                             </constraints>
                                         </view>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29a-Ib-ZFP">
-                                            <rect key="frame" x="0.0" y="46" width="414" height="806"/>
+                                            <rect key="frame" x="0.0" y="46" width="414" height="796"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <prototypes>
                                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SongCell" id="nOe-lV-nN6" customClass="SongCell" customModule="AmpachePlayer" customModuleProvider="target">
@@ -205,10 +205,115 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKN-92-Xbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.6956521739131" y="138.61607142857142"/>
+            <point key="canvasLocation" x="2330" y="141"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="WPe-3A-Dd6">
+            <objects>
+                <viewController id="ATV-mP-QdC" customClass="PlayerViewController" customModule="AmpachePlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FJX-BZ-mGe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wf3-BO-rlc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vb0-N4-pOS">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5S8-H8-9wr">
+                                            <rect key="frame" x="10" y="776" width="394" height="50"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="98u-qA-nzc">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfj-gy-Q1A" userLabel="list Button">
+                                                        <rect key="frame" x="0.0" y="0.0" width="98.5" height="50"/>
+                                                        <connections>
+                                                            <segue destination="usy-d4-Ko5" kind="show" id="0gg-mE-LuD"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list_button" translatesAutoresizingMaskIntoConstraints="NO" id="cP0-Qp-EGv" userLabel="List Button Image View">
+                                                        <rect key="frame" x="24.5" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="cP0-Qp-EGv" secondAttribute="height" multiplier="1:1" id="imw-2q-xgA"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlO-98-lHv">
+                                                        <rect key="frame" x="295.5" y="5" width="98.5" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                                        <state key="normal" title="More"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="YlO-98-lHv" firstAttribute="width" secondItem="98u-qA-nzc" secondAttribute="width" multiplier="0.25" id="2bD-Qt-XgW"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cfj-gy-Q1A" secondAttribute="bottom" id="3lT-4U-QxA"/>
+                                                    <constraint firstItem="cfj-gy-Q1A" firstAttribute="width" secondItem="98u-qA-nzc" secondAttribute="width" multiplier="1:4" id="8X0-dH-Yfz"/>
+                                                    <constraint firstItem="cP0-Qp-EGv" firstAttribute="height" secondItem="cfj-gy-Q1A" secondAttribute="height" multiplier="1:1" id="AkM-aG-A1X"/>
+                                                    <constraint firstItem="cfj-gy-Q1A" firstAttribute="leading" secondItem="98u-qA-nzc" secondAttribute="leading" id="Ana-Qd-uPr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YlO-98-lHv" secondAttribute="trailing" id="C6Z-oW-9Pt"/>
+                                                    <constraint firstItem="cfj-gy-Q1A" firstAttribute="top" secondItem="98u-qA-nzc" secondAttribute="top" id="Sah-op-4pQ"/>
+                                                    <constraint firstItem="cP0-Qp-EGv" firstAttribute="centerX" secondItem="cfj-gy-Q1A" secondAttribute="centerX" id="US6-sK-aoj"/>
+                                                    <constraint firstItem="YlO-98-lHv" firstAttribute="top" secondItem="98u-qA-nzc" secondAttribute="top" constant="5" id="kxR-7g-4kF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="YlO-98-lHv" secondAttribute="bottom" constant="5" id="rOL-4h-YBS"/>
+                                                    <constraint firstItem="cP0-Qp-EGv" firstAttribute="centerY" secondItem="cfj-gy-Q1A" secondAttribute="centerY" id="snJ-ts-wL6"/>
+                                                </constraints>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="xD9-A8-2J2"/>
+                                            </constraints>
+                                            <blurEffect style="regular"/>
+                                        </visualEffectView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank_album" translatesAutoresizingMaskIntoConstraints="NO" id="iuS-L9-SbN">
+                                            <rect key="frame" x="83" y="144.5" width="248" height="248.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="iuS-L9-SbN" secondAttribute="height" multiplier="1:1" id="ygF-MP-yMP"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV1-av-Yen">
+                                            <rect key="frame" x="175" y="493" width="64" height="64"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="fV1-av-Yen" secondAttribute="height" multiplier="1:1" id="21a-IB-wuU"/>
+                                                <constraint firstAttribute="width" constant="64" id="yOM-sc-Xo0"/>
+                                            </constraints>
+                                            <state key="normal" image="play_button"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="iuS-L9-SbN" firstAttribute="width" secondItem="Vb0-N4-pOS" secondAttribute="width" multiplier="0.6" id="5lJ-GM-2R0"/>
+                                        <constraint firstItem="5S8-H8-9wr" firstAttribute="leading" secondItem="Vb0-N4-pOS" secondAttribute="leading" constant="10" id="E4H-4u-3da"/>
+                                        <constraint firstItem="fV1-av-Yen" firstAttribute="centerX" secondItem="iuS-L9-SbN" secondAttribute="centerX" id="ERa-Yo-UxS"/>
+                                        <constraint firstItem="iuS-L9-SbN" firstAttribute="centerX" secondItem="Vb0-N4-pOS" secondAttribute="centerX" id="P4b-KX-6jM"/>
+                                        <constraint firstItem="fV1-av-Yen" firstAttribute="top" secondItem="iuS-L9-SbN" secondAttribute="bottom" constant="100" id="Twl-WR-2HH"/>
+                                        <constraint firstItem="5S8-H8-9wr" firstAttribute="centerX" secondItem="Vb0-N4-pOS" secondAttribute="centerX" id="ZvM-AR-9Se"/>
+                                        <constraint firstAttribute="trailing" secondItem="5S8-H8-9wr" secondAttribute="trailing" constant="10" id="flx-1m-D7L"/>
+                                        <constraint firstItem="iuS-L9-SbN" firstAttribute="centerY" secondItem="Vb0-N4-pOS" secondAttribute="centerY" multiplier="0.6" id="ifK-fc-d1N"/>
+                                        <constraint firstAttribute="bottom" secondItem="5S8-H8-9wr" secondAttribute="bottom" constant="70" id="sKR-VO-3bv"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="systemUltraThinMaterialLight"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wf3-BO-rlc" firstAttribute="top" secondItem="FJX-BZ-mGe" secondAttribute="top" id="9hD-m6-tjX"/>
+                            <constraint firstAttribute="bottom" secondItem="wf3-BO-rlc" secondAttribute="bottom" id="CwP-R8-shA"/>
+                            <constraint firstItem="wf3-BO-rlc" firstAttribute="leading" secondItem="FJX-BZ-mGe" secondAttribute="leading" id="PVa-vD-PsK"/>
+                            <constraint firstAttribute="trailing" secondItem="wf3-BO-rlc" secondAttribute="trailing" id="olh-qm-4TF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MXZ-sz-a7k"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1bS-la-Yra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="141"/>
         </scene>
     </scenes>
     <resources>
         <image name="ampache_dark" width="256" height="256"/>
+        <image name="blank_album" width="128" height="128"/>
+        <image name="list_button" width="512" height="512"/>
+        <image name="play_button" width="512" height="512"/>
     </resources>
 </document>
