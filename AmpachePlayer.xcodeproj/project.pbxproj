@@ -17,6 +17,8 @@
 		BE1F299D2510A12500BFB536 /* AmpachePlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F299C2510A12500BFB536 /* AmpachePlayerUITests.swift */; };
 		BE1F29AC2510B5A100BFB536 /* AmpacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F29AB2510B5A100BFB536 /* AmpacheManager.swift */; };
 		BE1F29AE2510BA1000BFB536 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F29AD2510BA1000BFB536 /* LoginModel.swift */; };
+		BE6C21952513162E00A29372 /* SongListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C21942513162E00A29372 /* SongListModel.swift */; };
+		BE6C219725132DA200A29372 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C219625132DA200A29372 /* SongCell.swift */; };
 		BE837B922511B8BA00BACA5D /* AmpacheRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B912511B8BA00BACA5D /* AmpacheRequestBuilder.swift */; };
 		BE837B942511C3B800BACA5D /* HandshakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B932511C3B800BACA5D /* HandshakeModel.swift */; };
 		BE837B962511C4F700BACA5D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B952511C4F700BACA5D /* ErrorModel.swift */; };
@@ -59,6 +61,8 @@
 		BE1F29AD2510BA1000BFB536 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		BE1F29B12510BE5C00BFB536 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BE1F29B32510BEDE00BFB536 /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = System/Library/Frameworks/CryptoKit.framework; sourceTree = SDKROOT; };
+		BE6C21942513162E00A29372 /* SongListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListModel.swift; sourceTree = "<group>"; };
+		BE6C219625132DA200A29372 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		BE837B912511B8BA00BACA5D /* AmpacheRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpacheRequestBuilder.swift; sourceTree = "<group>"; };
 		BE837B932511C3B800BACA5D /* HandshakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeModel.swift; sourceTree = "<group>"; };
 		BE837B952511C4F700BACA5D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				BE1F297A2510A12500BFB536 /* AppDelegate.swift */,
 				BE837B9C2512072D00BACA5D /* PlayerViewController.swift */,
 				BE1F297C2510A12500BFB536 /* SceneDelegate.swift */,
+				BE6C219625132DA200A29372 /* SongCell.swift */,
 				BE1F297E2510A12500BFB536 /* ViewController.swift */,
 				BE1F29802510A12500BFB536 /* Main.storyboard */,
 				BE1F29832510A12500BFB536 /* Assets.xcassets */,
@@ -161,6 +166,7 @@
 				BE1F29AD2510BA1000BFB536 /* LoginModel.swift */,
 				BE837B932511C3B800BACA5D /* HandshakeModel.swift */,
 				BE837B952511C4F700BACA5D /* ErrorModel.swift */,
+				BE6C21942513162E00A29372 /* SongListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,11 +312,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE1F29AE2510BA1000BFB536 /* LoginModel.swift in Sources */,
+				BE6C219725132DA200A29372 /* SongCell.swift in Sources */,
 				BE1F29AC2510B5A100BFB536 /* AmpacheManager.swift in Sources */,
 				BE837B922511B8BA00BACA5D /* AmpacheRequestBuilder.swift in Sources */,
 				BE1F297F2510A12500BFB536 /* ViewController.swift in Sources */,
 				BE1F297B2510A12500BFB536 /* AppDelegate.swift in Sources */,
 				BE837B9D2512072D00BACA5D /* PlayerViewController.swift in Sources */,
+				BE6C21952513162E00A29372 /* SongListModel.swift in Sources */,
 				BE837B942511C3B800BACA5D /* HandshakeModel.swift in Sources */,
 				BE837B962511C4F700BACA5D /* ErrorModel.swift in Sources */,
 				BE1F297D2510A12500BFB536 /* SceneDelegate.swift in Sources */,

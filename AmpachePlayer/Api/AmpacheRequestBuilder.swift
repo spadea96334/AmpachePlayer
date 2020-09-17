@@ -4,6 +4,7 @@ class AmpacheRequestBuilder: NSObject {
     
     public enum Action: String {
         case handshake = "handshake"
+        case getIndexes = "get_indexes"
     }
     
     private var urlcomponents: URLComponents!
@@ -15,6 +16,12 @@ class AmpacheRequestBuilder: NSObject {
         super.init()
         self.urlcomponents.path = "/server/json.server.php"
         self.queryItems.append(URLQueryItem.init(name: "action", value: action.rawValue))
+    }
+    
+    public func appendArg(name: String, value: String) -> AmpacheRequestBuilder {
+        self.queryItems.append(URLQueryItem.init(name: name, value: value))
+        
+        return self
     }
     
     public func setLoginInfo(model: LoginModel) -> AmpacheRequestBuilder {
