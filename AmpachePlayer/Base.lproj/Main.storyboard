@@ -119,25 +119,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKr-yK-lpj" userLabel="Header View">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVD-Y4-cCj" userLabel="Title Label">
-                                                    <rect key="frame" x="40" y="5" width="79.5" height="36"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="eVD-Y4-cCj" secondAttribute="bottom" constant="5" id="Omr-Dk-IO4"/>
-                                                <constraint firstItem="eVD-Y4-cCj" firstAttribute="leading" secondItem="pKr-yK-lpj" secondAttribute="leading" constant="40" id="VcS-Vg-CZg"/>
-                                                <constraint firstItem="eVD-Y4-cCj" firstAttribute="top" secondItem="pKr-yK-lpj" secondAttribute="top" constant="5" id="aMq-tI-zon"/>
-                                            </constraints>
-                                        </view>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29a-Ib-ZFP">
-                                            <rect key="frame" x="0.0" y="46" width="414" height="796"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <prototypes>
                                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SongCell" id="nOe-lV-nN6" customClass="SongCell" customModule="AmpachePlayer" customModuleProvider="target">
@@ -175,17 +158,12 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstItem="29a-Ib-ZFP" firstAttribute="top" secondItem="Fvx-R3-Av6" secondAttribute="top" id="8Vw-dN-yiy"/>
                                         <constraint firstAttribute="bottom" secondItem="29a-Ib-ZFP" secondAttribute="bottom" id="Kpb-8a-LaL"/>
-                                        <constraint firstItem="29a-Ib-ZFP" firstAttribute="top" secondItem="pKr-yK-lpj" secondAttribute="bottom" id="OS0-xL-MPS"/>
                                         <constraint firstItem="29a-Ib-ZFP" firstAttribute="leading" secondItem="Fvx-R3-Av6" secondAttribute="leading" id="Ouo-Gb-aCk"/>
                                         <constraint firstAttribute="trailing" secondItem="29a-Ib-ZFP" secondAttribute="trailing" id="TTI-lk-i0X"/>
-                                        <constraint firstAttribute="trailing" secondItem="pKr-yK-lpj" secondAttribute="trailing" id="blx-lt-mwX"/>
-                                        <constraint firstItem="pKr-yK-lpj" firstAttribute="leading" secondItem="Fvx-R3-Av6" secondAttribute="leading" id="osI-on-hhE"/>
                                     </constraints>
                                 </view>
-                                <constraints>
-                                    <constraint firstItem="pKr-yK-lpj" firstAttribute="top" secondItem="Fvx-R3-Av6" secondAttribute="top" id="DaS-Vh-fIZ"/>
-                                </constraints>
                                 <blurEffect style="systemUltraThinMaterialLight"/>
                             </visualEffectView>
                         </subviews>
