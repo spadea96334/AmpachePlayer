@@ -10,19 +10,20 @@ class AudioPlayer: NSObject {
         }
     }
     
-    var avAudioPlayer: AVPlayer?
+    var avAudioPlayer = AVQueuePlayer.init()
     var songModel: SongModel?
     
     public func setSong(song: SongModel) {
         self.songModel = song
         guard let url = URL.init(string: self.songModel!.url) else { return }
         
-        self.avAudioPlayer = AVPlayer.init(url: url)
+        self.avAudioPlayer.removeAllItems()
+        self.avAudioPlayer.insert(AVPlayerItem.init(url: url), after: nil);
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CurrentSongChanged"), object: nil)
-        self.avAudioPlayer!.play()
+        self.avAudioPlayer.play()
         
         // todo: remove this after ui finish
-        self.avAudioPlayer?.volume = 0.2
+        self.avAudioPlayer.volume = 0.2
     }
 }
