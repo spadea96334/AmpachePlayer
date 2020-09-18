@@ -260,6 +260,9 @@
                                                 <constraint firstAttribute="width" constant="64" id="yOM-sc-Xo0"/>
                                             </constraints>
                                             <state key="normal" image="play_button"/>
+                                            <connections>
+                                                <action selector="playButtonTouchUpInside:" destination="ATV-mP-QdC" eventType="touchUpInside" id="C0p-I9-g2b"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81Z-dj-KDJ" userLabel="Song Title Label">
                                             <rect key="frame" x="207" y="443" width="0.0" height="0.0"/>
@@ -298,7 +301,7 @@
                     <connections>
                         <outlet property="artImageView" destination="iuS-L9-SbN" id="y38-ni-7Ih"/>
                         <outlet property="playButton" destination="fV1-av-Yen" id="gtF-70-n1I"/>
-                        <outlet property="songTitleLabel" destination="81Z-dj-KDJ" id="FjA-4M-lly"/>
+                        <outlet property="songTitleLabel" destination="81Z-dj-KDJ" id="dFR-GB-5an"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bS-la-Yra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

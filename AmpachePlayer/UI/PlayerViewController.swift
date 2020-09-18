@@ -27,5 +27,13 @@ class PlayerViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func playButtonTouchUpInside(_ sender: PlayButton) {
+        if sender.playStatus == .paused {
+            AudioPlayer.sharedInstance.play()
+        } else {
+            AudioPlayer.sharedInstance.pause()
+        }
+    }
 }
 
