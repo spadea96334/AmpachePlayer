@@ -16,12 +16,6 @@ class SongListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     // MARK: - UITableViewDataSource
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        AudioPlayer.sharedInstance.setSong(index: indexPath.row, songList: AmpacheManager.sharedInstance.songList)
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AmpacheManager.sharedInstance.songList.count
     }

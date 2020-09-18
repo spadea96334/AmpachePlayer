@@ -24,6 +24,17 @@ class SongCell: UITableViewCell {
         self.titleLabel.text = self.song!.title
     }
     
+    @IBAction func playButtonTouchUpInside(_ sender: UIButton) {
+        guard self.song != nil else { return }
+        AudioPlayer.sharedInstance.removeAllSong()
+        AudioPlayer.sharedInstance.addSong(song: self.song!)
+    }
+    
+    @IBAction func addButtonTouchUpInside(_ sender: UIButton) {
+        guard self.song != nil else { return }
+        AudioPlayer.sharedInstance.addSong(song: self.song!)
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }

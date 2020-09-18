@@ -149,6 +149,9 @@
                                                                 </constraints>
                                                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                                 <state key="normal" image="add_black"/>
+                                                                <connections>
+                                                                    <action selector="addButtonTouchUpInside:" destination="nOe-lV-nN6" eventType="touchUpInside" id="h0u-yq-aGo"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbW-3f-Xxb" userLabel="Play Button">
                                                                 <rect key="frame" x="313" y="-1" width="46" height="46"/>
@@ -158,6 +161,9 @@
                                                                 </constraints>
                                                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                                 <state key="normal" image="list_play"/>
+                                                                <connections>
+                                                                    <action selector="playButtonTouchUpInside:" destination="nOe-lV-nN6" eventType="touchUpInside" id="sdh-TK-3KL"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

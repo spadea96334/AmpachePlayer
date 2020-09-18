@@ -6,12 +6,12 @@ class AudioPlayer: NSObject {
     public static let sharedInstance = AudioPlayer.init()
     public var currentSong: SongModel? {
         get {
-            return self.playList?[self.currentSongIndex]
+            return self.currentSongIndex < self.songList.count ? self.songList[self.currentSongIndex] : nil
         }
     }
     
-    var playList: [SongModel]?
-    var currentSongIndex = 0
+    var songList: [SongModel] = []
+    var currentSongIndex = -1
     var avAudioPlayer = AVQueuePlayer.init()
     
     public func addObserverForPlayerState(_ observer: NSObject){
@@ -26,18 +26,42 @@ class AudioPlayer: NSObject {
         self.avAudioPlayer.pause()
     }
     
-    public func setSong(index: Int, songList: [SongModel]) {
-        self.playList = songList
-        self.currentSongIndex = index
-        guard let url = URL.init(string: self.playList![index].url) else { return }
+    public func addSong(song: SongModel) {
+        guard let url = URL.init(string: song.url) else { return }
+        let item = AVPlayerItem.init(url: url)
         
+        if !self.avAudioPlayer.canInsert(item, after: nil) {
+            // Todo: show error
+        }
+        
+        self.songList.append(song)
+        self.avAudioPlayer.insert(item, after: nil)
+        
+        // if this is the first song, start playing
+        if self.avAudioPlayer.items().count == 1 {
+            self.avAudioPlayer.play()
+            
+            // todo: remove this after ui finish
+            self.avAudioPlayer.volume = 0.2
+        }
+    }
+    
+    public func removeAllSong() {
+        self.avAudioPlayer.pause()
         self.avAudioPlayer.removeAllItems()
-        self.avAudioPlayer.insert(AVPlayerItem.init(url: url), after: nil);
-        
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CurrentSongChanged"), object: nil)
-        self.avAudioPlayer.play()
-        
-        // todo: remove this after ui finish
-        self.avAudioPlayer.volume = 0.2
+        self.currentSongIndex = -1
+        self.songList = []
+    }
+    
+    override init() {
+        super.init()
+        self.avAudioPlayer.addObserver(self, forKeyPath: "currentItem", options: NSKeyValueObservingOptions.new, context: nil)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "currentItem" {
+            self.currentSongIndex += 1
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CurrentSongChanged"), object: nil)
+        }
     }
 }
