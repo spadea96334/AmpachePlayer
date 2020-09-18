@@ -21,8 +21,7 @@ class SongListViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let song = AmpacheManager.sharedInstance.songList[indexPath.row]
-        AudioPlayer.sharedInstance.setSong(song: song)
+        AudioPlayer.sharedInstance.setSong(index: indexPath.row, songList: AmpacheManager.sharedInstance.songList)
         self.dismiss(animated: true, completion: nil)
     }
     

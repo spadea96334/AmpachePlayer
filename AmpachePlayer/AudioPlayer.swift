@@ -6,20 +6,30 @@ class AudioPlayer: NSObject {
     public static let sharedInstance = AudioPlayer.init()
     public var currentSong: SongModel? {
         get {
-            return self.songModel
+            return self.playList?[self.currentSongIndex]
         }
     }
     
+    var playList: [SongModel]?
+    var currentSongIndex = 0
     var avAudioPlayer = AVQueuePlayer.init()
-    var songModel: SongModel?
     
     public func addObserverForPlayerState(_ observer: NSObject){
         self.avAudioPlayer.addObserver(observer, forKeyPath: "timeControlStatus", options: NSKeyValueObservingOptions.new, context: nil)
     }
     
-    public func setSong(song: SongModel) {
-        self.songModel = song
-        guard let url = URL.init(string: self.songModel!.url) else { return }
+    public func play() {
+        self.avAudioPlayer.play()
+    }
+    
+    public func pause() {
+        self.avAudioPlayer.pause()
+    }
+    
+    public func setSong(index: Int, songList: [SongModel]) {
+        self.playList = songList
+        self.currentSongIndex = index
+        guard let url = URL.init(string: self.playList![index].url) else { return }
         
         self.avAudioPlayer.removeAllItems()
         self.avAudioPlayer.insert(AVPlayerItem.init(url: url), after: nil);
