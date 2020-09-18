@@ -15,10 +15,6 @@ class SongListViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
-    }
-    
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         AudioPlayer.sharedInstance.setSong(index: indexPath.row, songList: AmpacheManager.sharedInstance.songList)
