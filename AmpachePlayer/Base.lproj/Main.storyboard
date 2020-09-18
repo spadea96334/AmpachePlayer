@@ -160,6 +160,7 @@
                                                                 <state key="normal" image="list_play"/>
                                                             </button>
                                                         </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="JbW-3f-Xxb" firstAttribute="centerY" secondItem="0AC-im-sDU" secondAttribute="centerY" id="0Bt-6F-ARf"/>
                                                             <constraint firstAttribute="bottom" secondItem="Ll7-u4-bjB" secondAttribute="bottom" constant="10" id="6Ky-jF-ieg"/>
@@ -196,7 +197,7 @@
                                 <blurEffect style="systemUltraThinMaterialLight"/>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="iVs-wP-rUv" secondAttribute="trailing" id="9CU-Of-f44"/>
                             <constraint firstItem="iVs-wP-rUv" firstAttribute="leading" secondItem="eB9-Et-Vj0" secondAttribute="leading" id="B8m-EE-tm8"/>
