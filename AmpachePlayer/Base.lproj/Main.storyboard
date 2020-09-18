@@ -135,17 +135,42 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ll7-u4-bjB">
-                                                                <rect key="frame" x="5" y="10" width="88" height="24"/>
+                                                                <rect key="frame" x="5" y="10" width="308" height="24"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbc-JH-RfF" userLabel="Add Play Button">
+                                                                <rect key="frame" x="359" y="-0.5" width="45" height="45"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="50J-j5-cnc"/>
+                                                                    <constraint firstAttribute="width" secondItem="Dbc-JH-RfF" secondAttribute="height" multiplier="1:1" id="jEe-L9-vRx"/>
+                                                                </constraints>
+                                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                                <state key="normal" image="add_black"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbW-3f-Xxb" userLabel="Play Button">
+                                                                <rect key="frame" x="313" y="-1" width="46" height="46"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="46" id="9AL-Af-KxQ"/>
+                                                                    <constraint firstAttribute="width" secondItem="JbW-3f-Xxb" secondAttribute="height" multiplier="1:1" id="wej-Mi-aek"/>
+                                                                </constraints>
+                                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                                <state key="normal" image="list_play"/>
+                                                            </button>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="JbW-3f-Xxb" firstAttribute="centerY" secondItem="0AC-im-sDU" secondAttribute="centerY" id="0Bt-6F-ARf"/>
                                                             <constraint firstAttribute="bottom" secondItem="Ll7-u4-bjB" secondAttribute="bottom" constant="10" id="6Ky-jF-ieg"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Dbc-JH-RfF" secondAttribute="trailing" constant="10" id="7yg-EQ-wei"/>
+                                                            <constraint firstItem="JbW-3f-Xxb" firstAttribute="leading" secondItem="Ll7-u4-bjB" secondAttribute="trailing" id="JR6-cx-qQT"/>
                                                             <constraint firstItem="Ll7-u4-bjB" firstAttribute="leading" secondItem="0AC-im-sDU" secondAttribute="leading" constant="5" id="LhA-ca-zD1"/>
                                                             <constraint firstItem="Ll7-u4-bjB" firstAttribute="top" secondItem="0AC-im-sDU" secondAttribute="top" constant="10" id="bsO-83-3Tm"/>
+                                                            <constraint firstItem="Dbc-JH-RfF" firstAttribute="centerY" secondItem="0AC-im-sDU" secondAttribute="centerY" id="ceV-DI-Mva"/>
+                                                            <constraint firstItem="JbW-3f-Xxb" firstAttribute="trailing" secondItem="Dbc-JH-RfF" secondAttribute="leading" id="g5x-3Z-9jQ"/>
+                                                            <constraint firstItem="Dbc-JH-RfF" firstAttribute="height" secondItem="0AC-im-sDU" secondAttribute="height" constant="1" id="wP5-n3-wAh"/>
+                                                            <constraint firstItem="JbW-3f-Xxb" firstAttribute="width" secondItem="JbW-3f-Xxb" secondAttribute="height" multiplier="1:1" id="y6J-Kb-Xv4"/>
                                                         </constraints>
                                                     </tableViewCellContentView>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -310,9 +335,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_black" width="512" height="512"/>
         <image name="ampache_dark" width="256" height="256"/>
         <image name="blank_album" width="128" height="128"/>
         <image name="list_button" width="512" height="512"/>
+        <image name="list_play" width="512" height="512"/>
         <image name="play_button" width="512" height="512"/>
     </resources>
 </document>
