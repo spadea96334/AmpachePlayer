@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
         AmpacheManager.sharedInstance.login(model: model, url: url) { (error: ErrorModel?) in
             if error != nil {
                 // Todo: show error message
+                return
             }
             
             DispatchQueue.main.async {

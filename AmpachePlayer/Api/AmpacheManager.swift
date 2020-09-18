@@ -41,10 +41,17 @@ class AmpacheManager: NSObject {
         self.ping { (error: ErrorModel?) in
             if error != nil {
                 completionHandler(error)
+                return
             }
             
-            self.getSongList()
-            completionHandler(nil)
+            self.getSongList { (error: ErrorModel?) in
+                if error != nil {
+                    completionHandler(error)
+                    return
+                }
+                
+                completionHandler(nil)
+            }
         }
     }
     
@@ -68,8 +75,9 @@ class AmpacheManager: NSObject {
             if handshakeModel != nil {
                 self.isLogin = true
                 self.handshakeModel = handshakeModel
-                self.getSongList()
-                completionHandler(nil)
+                self.getSongList { (error: ErrorModel?) in
+                    completionHandler(nil)
+                }
                 
                 return
             }
@@ -101,7 +109,7 @@ class AmpacheManager: NSObject {
         dataTask.resume()
     }
     
-    func getSongList() {
+    func getSongList(completionHandler: @escaping (ErrorModel?) -> Void) {
         let requestBuilder = AmpacheRequestBuilder.init(action: AmpacheRequestBuilder.Action.getIndexes, url: self.serverUrl!)
         _ = requestBuilder.appendArg(name: "type", value: "song").appendArg(name: "auth", value: self.handshakeModel!.auth)
         guard let request = requestBuilder.build() else {return}
@@ -121,6 +129,7 @@ class AmpacheManager: NSObject {
             if songList != nil {
                 self.songList = songList!
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SongListChanged"), object: nil)
+                completionHandler(nil)
                 
                 return
             }
@@ -129,6 +138,7 @@ class AmpacheManager: NSObject {
             
             if errorModel != nil {
                 print(errorModel!.error.message)
+                completionHandler(errorModel)
                 return
             }
         }
