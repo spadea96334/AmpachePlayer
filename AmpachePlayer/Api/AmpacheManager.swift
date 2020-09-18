@@ -31,6 +31,7 @@ class AmpacheManager: NSObject {
             if handshakeModel != nil {
                 self.isLogin = true
                 self.handshakeModel = handshakeModel
+                self.getSongList()
                 completionHandler(nil)
                 self.saveLoginInfo()
                 
