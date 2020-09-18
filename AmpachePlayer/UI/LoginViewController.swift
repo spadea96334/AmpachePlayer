@@ -5,6 +5,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var serverTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,6 +13,7 @@ class LoginViewController: UIViewController {
         if PlayerSetting.sharedInstance.handshakeModel != nil {
             self.login(model: PlayerSetting.sharedInstance.handshakeModel!)
         }
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -24,7 +26,9 @@ class LoginViewController: UIViewController {
     func login(model: HandshakeModel) {
         guard let url = PlayerSetting.sharedInstance.serverUrl else { return }
         let model = PlayerSetting.sharedInstance.handshakeModel!
+        self.changeLoginButton(isLogging: true)
         AmpacheManager.sharedInstance.login(model: model, url: url) { (error: ErrorModel?) in
+            self.changeLoginButton(isLogging: false)
             if error != nil {
                 // Todo: show error message
                 return
@@ -35,13 +39,21 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    func changeLoginButton(isLogging: Bool) {
+        DispatchQueue.main.async {
+            self.loginButton.isEnabled = !isLogging
+        }
+    }
 
     @IBAction func loginButtonTouchUpInside(_ sender: Any) {
         let model = LoginModel.init()
         model.account = self.accountTextField.text!
         model.password = self.passwordTextField.text!
         model.serverUrl = self.serverTextField.text!
+        self.changeLoginButton(isLogging: true)
         AmpacheManager.sharedInstance.login(model: model) { (error: ErrorModel?) in
+            self.changeLoginButton(isLogging: false)
             if (error != nil) {
                 // Todo: show error message
             }

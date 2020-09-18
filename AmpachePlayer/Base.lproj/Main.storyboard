@@ -47,6 +47,7 @@
                                             <state key="normal" title="Login">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <state key="disabled" title="Logging..."/>
                                             <connections>
                                                 <action selector="loginButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IhU-aW-vgy"/>
                                             </connections>
@@ -98,6 +99,7 @@
                     </view>
                     <connections>
                         <outlet property="accountTextField" destination="lmC-yI-JbA" id="dIf-s8-sKp"/>
+                        <outlet property="loginButton" destination="oDW-da-PO5" id="gFe-RG-lmV"/>
                         <outlet property="passwordTextField" destination="7CU-sP-jqp" id="e59-hU-Hem"/>
                         <outlet property="serverTextField" destination="suF-fJ-iaI" id="m2m-Jb-mMd"/>
                         <segue destination="ATV-mP-QdC" kind="presentation" identifier="ToPlayerSegue" modalPresentationStyle="fullScreen" id="mrh-Qg-HD2"/>
