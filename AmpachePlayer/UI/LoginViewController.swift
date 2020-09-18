@@ -9,12 +9,29 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if PlayerSetting.sharedInstance.handshakeModel != nil {
+            self.login(model: PlayerSetting.sharedInstance.handshakeModel!)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if AmpacheManager.sharedInstance.isLogin {
             self.performSegue(withIdentifier: "ToPlayerSegue", sender: nil)
+        }
+    }
+    
+    func login(model: HandshakeModel) {
+        guard let url = PlayerSetting.sharedInstance.serverUrl else { return }
+        let model = PlayerSetting.sharedInstance.handshakeModel!
+        AmpacheManager.sharedInstance.login(model: model, url: url) { (error: ErrorModel?) in
+            if error != nil {
+                // Todo: show error message
+            }
+            
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "ToPlayerSegue", sender: nil)
+            }
         }
     }
 
@@ -31,6 +48,9 @@ class LoginViewController: UIViewController {
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "ToPlayerSegue", sender: nil)
             }
+            
+            guard let handshakeModel = AmpacheManager.sharedInstance.handshakeModel else { return }
+            PlayerSetting.sharedInstance.saveLoginInfo(model: handshakeModel, url: model.serverUrl)
         }
     }
     

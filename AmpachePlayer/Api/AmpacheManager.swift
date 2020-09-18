@@ -4,12 +4,20 @@ import UIKit
 class AmpacheManager: NSObject {
     
     public static let sharedInstance = AmpacheManager.init()
-    private(set) var songList: SongList = []
+    private(set) var handshakeModel: HandshakeModel?
     private(set) var isLogin = false
+    private(set) var songList: SongList = []
 
     let session = URLSession.init(configuration: URLSessionConfiguration.default)
     var serverUrl: String?
-    var handshakeModel: HandshakeModel?
+    
+    public func login(model: HandshakeModel, url: String ,completionHandler: @escaping (ErrorModel?) -> Void) {
+        self.handshakeModel = model
+        self.serverUrl = url
+        // Todo: ping server
+        self.getSongList()
+        completionHandler(nil)
+    }
     
     public func login(model: LoginModel) {
         self.login(model: model, completionHandler:{_ in })
@@ -33,7 +41,6 @@ class AmpacheManager: NSObject {
                 self.handshakeModel = handshakeModel
                 self.getSongList()
                 completionHandler(nil)
-                self.saveLoginInfo()
                 
                 return
             }
@@ -100,40 +107,7 @@ class AmpacheManager: NSObject {
         dataTask.resume()
     }
     
-    func saveLoginInfo() {
-        let data = try? JSONEncoder().encode(self.handshakeModel)
-        
-        if data != nil {
-            UserDefaults.standard.set(data, forKey: "handshake")
-        } else {
-            NSLog("Can't encode handshake model")
-            return
-        }
-        
-        UserDefaults.standard.set(self.serverUrl!, forKey: "serverUrl")
-        UserDefaults.standard.synchronize()
-    }
-    
-    func loadLastLogin() -> Bool {
-        guard let data = UserDefaults.standard.value(forKey: "handshake") as? Data else {return false}
-        guard let model = try? JSONDecoder().decode(HandshakeModel.self, from: data) else {return false}
-        guard let serverUrl = UserDefaults.standard.value(forKey: "serverUrl") as? String else {return false}
-        self.serverUrl = serverUrl
-           
-        if !model.isEmpty() {
-            self.isLogin = true
-            self.handshakeModel = model
-            
-            return true
-        }
-        
-        return false
-    }
-    
     private override init() {
         super.init()
-        if self.loadLastLogin() {
-            self.getSongList()
-        }
     }
 }

@@ -26,6 +26,7 @@
 		BE837B962511C4F700BACA5D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B952511C4F700BACA5D /* ErrorModel.swift */; };
 		BE837B9D2512072D00BACA5D /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B9C2512072D00BACA5D /* SongListViewController.swift */; };
 		BEAB2E6F25144AD300BA3186 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAB2E6E25144AD300BA3186 /* PlayButton.swift */; };
+		BEAB2E712514548200BA3186 /* PlayerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAB2E702514548200BA3186 /* PlayerSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		BE837B952511C4F700BACA5D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		BE837B9C2512072D00BACA5D /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
 		BEAB2E6E25144AD300BA3186 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
+		BEAB2E702514548200BA3186 /* PlayerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSetting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				BE1F29AA2510B56C00BFB536 /* Api */,
 				BE6C219A251345AC00A29372 /* UI */,
 				BE1F297A2510A12500BFB536 /* AppDelegate.swift */,
+				BEAB2E702514548200BA3186 /* PlayerSetting.swift */,
 				BE6C219B2513474400A29372 /* AudioPlayer.swift */,
 				BE1F297C2510A12500BFB536 /* SceneDelegate.swift */,
 				BE1F29802510A12500BFB536 /* Main.storyboard */,
@@ -346,6 +349,7 @@
 				BE837B9D2512072D00BACA5D /* SongListViewController.swift in Sources */,
 				BEAB2E6F25144AD300BA3186 /* PlayButton.swift in Sources */,
 				BE6C21952513162E00A29372 /* SongListModel.swift in Sources */,
+				BEAB2E712514548200BA3186 /* PlayerSetting.swift in Sources */,
 				BE837B942511C3B800BACA5D /* HandshakeModel.swift in Sources */,
 				BE837B962511C4F700BACA5D /* ErrorModel.swift in Sources */,
 				BE6C219C2513474400A29372 /* AudioPlayer.swift in Sources */,
