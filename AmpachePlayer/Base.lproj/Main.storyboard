@@ -40,11 +40,13 @@
                                             <textInputTraits key="textInputTraits" keyboardType="URL" textContentType="url"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDW-da-PO5">
-                                            <rect key="frame" x="52" y="485" width="310.5" height="40"/>
+                                            <rect key="frame" x="52" y="485" width="310.5" height="38"/>
                                             <color key="backgroundColor" red="0.99215686270000003" green="0.54117647059999996" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                            <state key="normal" title="Login"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
+                                            <state key="normal" title="Login">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
                                             <connections>
                                                 <action selector="loginButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IhU-aW-vgy"/>
                                             </connections>
