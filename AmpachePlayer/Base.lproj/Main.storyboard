@@ -249,7 +249,7 @@
                                                 <constraint firstAttribute="width" secondItem="iuS-L9-SbN" secondAttribute="height" multiplier="1:1" id="ygF-MP-yMP"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV1-av-Yen">
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV1-av-Yen" customClass="PlayButton" customModule="AmpachePlayer" customModuleProvider="target">
                                             <rect key="frame" x="175" y="473" width="64" height="64"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="fV1-av-Yen" secondAttribute="height" multiplier="1:1" id="21a-IB-wuU"/>
@@ -293,6 +293,7 @@
                     </view>
                     <connections>
                         <outlet property="artImageView" destination="iuS-L9-SbN" id="y38-ni-7Ih"/>
+                        <outlet property="playButton" destination="fV1-av-Yen" id="gtF-70-n1I"/>
                         <outlet property="songTitleLabel" destination="81Z-dj-KDJ" id="FjA-4M-lly"/>
                     </connections>
                 </viewController>

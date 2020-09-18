@@ -13,6 +13,10 @@ class AudioPlayer: NSObject {
     var avAudioPlayer = AVQueuePlayer.init()
     var songModel: SongModel?
     
+    public func addObserverForPlayerState(_ observer: NSObject){
+        self.avAudioPlayer.addObserver(observer, forKeyPath: "timeControlStatus", options: NSKeyValueObservingOptions.new, context: nil)
+    }
+    
     public func setSong(song: SongModel) {
         self.songModel = song
         guard let url = URL.init(string: self.songModel!.url) else { return }

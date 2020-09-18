@@ -25,6 +25,7 @@
 		BE837B942511C3B800BACA5D /* HandshakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B932511C3B800BACA5D /* HandshakeModel.swift */; };
 		BE837B962511C4F700BACA5D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B952511C4F700BACA5D /* ErrorModel.swift */; };
 		BE837B9D2512072D00BACA5D /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE837B9C2512072D00BACA5D /* SongListViewController.swift */; };
+		BEAB2E6F25144AD300BA3186 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAB2E6E25144AD300BA3186 /* PlayButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		BE837B932511C3B800BACA5D /* HandshakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeModel.swift; sourceTree = "<group>"; };
 		BE837B952511C4F700BACA5D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		BE837B9C2512072D00BACA5D /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
+		BEAB2E6E25144AD300BA3186 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,12 +188,21 @@
 		BE6C219A251345AC00A29372 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BEAB2E6D25144AB700BA3186 /* Views */,
 				BE1F297E2510A12500BFB536 /* LoginViewController.swift */,
 				BE6C219825133C5300A29372 /* PlayerViewController.swift */,
 				BE6C219625132DA200A29372 /* SongCell.swift */,
 				BE837B9C2512072D00BACA5D /* SongListViewController.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		BEAB2E6D25144AB700BA3186 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEAB2E6E25144AD300BA3186 /* PlayButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +344,7 @@
 				BE6C219925133C5300A29372 /* PlayerViewController.swift in Sources */,
 				BE1F297B2510A12500BFB536 /* AppDelegate.swift in Sources */,
 				BE837B9D2512072D00BACA5D /* SongListViewController.swift in Sources */,
+				BEAB2E6F25144AD300BA3186 /* PlayButton.swift in Sources */,
 				BE6C21952513162E00A29372 /* SongListModel.swift in Sources */,
 				BE837B942511C3B800BACA5D /* HandshakeModel.swift in Sources */,
 				BE837B962511C4F700BACA5D /* ErrorModel.swift in Sources */,

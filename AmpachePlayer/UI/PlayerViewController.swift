@@ -1,3 +1,4 @@
+import AVKit
 import Foundation
 import UIKit
 
@@ -5,9 +6,11 @@ class PlayerViewController: UIViewController {
     
     @IBOutlet weak var artImageView: UIImageView!
     @IBOutlet weak var songTitleLabel: UILabel!
+    @IBOutlet weak var playButton: PlayButton!
     
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(onCurrentSongChanged), name: NSNotification.Name(rawValue: "CurrentSongChanged"), object: nil)
+        AudioPlayer.sharedInstance.addObserverForPlayerState(self.playButton)
     }
     
     @objc func onCurrentSongChanged() {
