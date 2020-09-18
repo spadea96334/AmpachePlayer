@@ -5,6 +5,7 @@ class AmpacheRequestBuilder: NSObject {
     public enum Action: String {
         case handshake = "handshake"
         case getIndexes = "get_indexes"
+        case ping = "ping"
     }
     
     private var urlcomponents: URLComponents!

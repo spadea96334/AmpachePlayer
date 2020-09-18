@@ -11,12 +11,41 @@ class AmpacheManager: NSObject {
     let session = URLSession.init(configuration: URLSessionConfiguration.default)
     var serverUrl: String?
     
+    public func ping(completionHandler: @escaping (ErrorModel?) -> Void) {
+        let builder = AmpacheRequestBuilder.init(action: .ping, url: self.serverUrl!)
+        _ = builder.appendArg(name: "auth", value: self.handshakeModel!.auth)
+        guard let request = builder.build() else { return }
+        
+        let dataTask = session.dataTask(with: request) { (data:Data?, response:URLResponse?, error:Error?) in
+            if error != nil || data == nil {
+                return
+            }
+            
+            let errorModel = try? JSONDecoder.init().decode(ErrorModel.self, from: data!)
+            
+            if errorModel != nil {
+                completionHandler(errorModel)
+                return
+            }
+            
+            completionHandler(nil)
+        }
+        
+        dataTask.resume()
+    }
+    
     public func login(model: HandshakeModel, url: String ,completionHandler: @escaping (ErrorModel?) -> Void) {
         self.handshakeModel = model
         self.serverUrl = url
-        // Todo: ping server
-        self.getSongList()
-        completionHandler(nil)
+        
+        self.ping { (error: ErrorModel?) in
+            if error != nil {
+                completionHandler(error)
+            }
+            
+            self.getSongList()
+            completionHandler(nil)
+        }
     }
     
     public func login(model: LoginModel) {
