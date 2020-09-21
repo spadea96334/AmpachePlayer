@@ -85,6 +85,7 @@ class AudioPlayer: NSObject {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "currentItem" {
+            guard self.currentMediaIndex != self.mediaList.count - 1 else { return }
             self.currentMediaIndex += 1
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CurrentMediaChanged"), object: nil)
         }
