@@ -261,7 +261,7 @@
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list_button" translatesAutoresizingMaskIntoConstraints="NO" id="cP0-Qp-EGv" userLabel="List Button Image View">
-                                                        <rect key="frame" x="24.5" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="29.5" y="5" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="cP0-Qp-EGv" secondAttribute="height" multiplier="1:1" id="imw-2q-xgA"/>
                                                         </constraints>
@@ -282,7 +282,7 @@
                                                     <constraint firstItem="YlO-98-lHv" firstAttribute="width" secondItem="98u-qA-nzc" secondAttribute="width" multiplier="0.25" id="2bD-Qt-XgW"/>
                                                     <constraint firstAttribute="bottom" secondItem="cfj-gy-Q1A" secondAttribute="bottom" id="3lT-4U-QxA"/>
                                                     <constraint firstItem="cfj-gy-Q1A" firstAttribute="width" secondItem="98u-qA-nzc" secondAttribute="width" multiplier="1:4" id="8X0-dH-Yfz"/>
-                                                    <constraint firstItem="cP0-Qp-EGv" firstAttribute="height" secondItem="cfj-gy-Q1A" secondAttribute="height" multiplier="1:1" id="AkM-aG-A1X"/>
+                                                    <constraint firstItem="cP0-Qp-EGv" firstAttribute="height" secondItem="cfj-gy-Q1A" secondAttribute="height" multiplier="1:1" constant="-10" id="AkM-aG-A1X"/>
                                                     <constraint firstItem="cfj-gy-Q1A" firstAttribute="leading" secondItem="98u-qA-nzc" secondAttribute="leading" id="Ana-Qd-uPr"/>
                                                     <constraint firstAttribute="trailing" secondItem="YlO-98-lHv" secondAttribute="trailing" id="C6Z-oW-9Pt"/>
                                                     <constraint firstItem="TB0-bm-9OE" firstAttribute="centerX" secondItem="YlO-98-lHv" secondAttribute="centerX" id="N8Y-F7-TKr"/>
