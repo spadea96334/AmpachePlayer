@@ -27,6 +27,9 @@ class AudioPlayer: NSObject {
     }
     
     public func addMedia(mediaList: [MediaModel]) {
+        // Temporarily disable this function ,because AVQueuePlayer stuck when adding a lot of item
+        // Todo: Implement a queue to replace queue of AVQueuePlayer
+        return
         for media in mediaList {
             guard let url = URL.init(string: media.url) else { continue }
             let item = AVPlayerItem.init(url: url)
