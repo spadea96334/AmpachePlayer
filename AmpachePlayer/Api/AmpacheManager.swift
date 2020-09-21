@@ -6,7 +6,7 @@ class AmpacheManager: NSObject {
     public static let sharedInstance = AmpacheManager.init()
     private(set) var handshakeModel: HandshakeModel?
     private(set) var isLogin = false
-    private(set) var songList: SongList = []
+    private(set) var mediaList: MediaList = []
 
     let session = URLSession.init(configuration: URLSessionConfiguration.default)
     var serverUrl: String?
@@ -44,7 +44,7 @@ class AmpacheManager: NSObject {
                 return
             }
             
-            self.getSongList { (error: ErrorModel?) in
+            self.getMediaList { (error: ErrorModel?) in
                 if error != nil {
                     completionHandler(error)
                     return
@@ -75,7 +75,7 @@ class AmpacheManager: NSObject {
             if handshakeModel != nil {
                 self.isLogin = true
                 self.handshakeModel = handshakeModel
-                self.getSongList { (error: ErrorModel?) in
+                self.getMediaList { (error: ErrorModel?) in
                     completionHandler(nil)
                 }
                 
@@ -95,8 +95,8 @@ class AmpacheManager: NSObject {
         dataTask.resume()
     }
     
-    public func getArt(song: SongModel, completionHandler: @escaping (UIImage?) -> Void) {
-        guard let artUrl = URL.init(string: song.art) else { return }
+    public func getArt(media: MediaModel, completionHandler: @escaping (UIImage?) -> Void) {
+        guard let artUrl = URL.init(string: media.art) else { return }
         
         let dataTask = self.session.dataTask(with: artUrl) { (data: Data?, response: URLResponse?, error: Error?) in
             if error != nil || data == nil {
@@ -109,7 +109,7 @@ class AmpacheManager: NSObject {
         dataTask.resume()
     }
     
-    func getSongList(completionHandler: @escaping (ErrorModel?) -> Void) {
+    func getMediaList(completionHandler: @escaping (ErrorModel?) -> Void) {
         let requestBuilder = AmpacheRequestBuilder.init(action: .getIndexes, url: self.serverUrl!)
         _ = requestBuilder.appendArg(name: "type", value: "song").appendArg(name: "auth", value: self.handshakeModel!.auth)
         guard let request = requestBuilder.build() else {return}
@@ -119,16 +119,16 @@ class AmpacheManager: NSObject {
                 return
             }
            
-            var songList: SongList?
+            var mediaList: MediaList?
             do {
-                songList = try JSONDecoder.init().decode(SongList.self, from: data!)
+                mediaList = try JSONDecoder.init().decode(MediaList.self, from: data!)
             } catch {
-                NSLog("Error parse song info: " + error.localizedDescription)
+                NSLog("Error parse media info: " + error.localizedDescription)
             }
             
-            if songList != nil {
-                self.songList = songList!
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SongListChanged"), object: nil)
+            if mediaList != nil {
+                self.mediaList = mediaList!
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MediaListChanged"), object: nil)
                 completionHandler(nil)
                 
                 return

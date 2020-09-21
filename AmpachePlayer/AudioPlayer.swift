@@ -4,14 +4,14 @@ import Foundation
 class AudioPlayer: NSObject {
     
     public static let sharedInstance = AudioPlayer.init()
-    public var currentSong: SongModel? {
+    public var currentMedia: MediaModel? {
         get {
-            return self.currentSongIndex < self.songList.count ? self.songList[self.currentSongIndex] : nil
+            return self.currentMediaIndex < self.mediaList.count ? self.mediaList[self.currentMediaIndex] : nil
         }
     }
     
-    var songList: [SongModel] = []
-    var currentSongIndex = -1
+    var mediaList: [MediaModel] = []
+    var currentMediaIndex = -1
     var avAudioPlayer = AVQueuePlayer.init()
     
     public func addObserverForPlayerState(_ observer: NSObject){
@@ -26,18 +26,18 @@ class AudioPlayer: NSObject {
         self.avAudioPlayer.pause()
     }
     
-    public func addSong(song: SongModel) {
-        guard let url = URL.init(string: song.url) else { return }
+    public func addMedia(media: MediaModel) {
+        guard let url = URL.init(string: media.url) else { return }
         let item = AVPlayerItem.init(url: url)
         
         if !self.avAudioPlayer.canInsert(item, after: nil) {
             // Todo: show error
         }
         
-        self.songList.append(song)
+        self.mediaList.append(media)
         self.avAudioPlayer.insert(item, after: nil)
         
-        // if this is the first song, start playing
+        // if this is the first media, start playing
         if self.avAudioPlayer.items().count == 1 {
             self.avAudioPlayer.play()
             
@@ -46,11 +46,11 @@ class AudioPlayer: NSObject {
         }
     }
     
-    public func removeAllSong() {
+    public func removeAllMedia() {
         self.avAudioPlayer.pause()
         self.avAudioPlayer.removeAllItems()
-        self.currentSongIndex = -1
-        self.songList = []
+        self.currentMediaIndex = -1
+        self.mediaList = []
     }
     
     override init() {
@@ -60,8 +60,8 @@ class AudioPlayer: NSObject {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "currentItem" {
-            self.currentSongIndex += 1
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CurrentSongChanged"), object: nil)
+            self.currentMediaIndex += 1
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CurrentMediaChanged"), object: nil)
         }
     }
 }

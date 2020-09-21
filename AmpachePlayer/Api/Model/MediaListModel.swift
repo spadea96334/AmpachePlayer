@@ -1,8 +1,8 @@
 import Foundation
 
-typealias SongList = [SongModel]
+typealias MediaList = [MediaModel]
 
-struct SongModel: Codable {
+struct MediaModel: Codable {
     let id, title, name: String
     let artist, album: Album
     let tag: [Album]
