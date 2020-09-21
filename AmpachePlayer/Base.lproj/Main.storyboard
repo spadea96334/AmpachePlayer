@@ -141,6 +141,13 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K9m-ZI-yqA" userLabel="Line View">
+                                                                <rect key="frame" x="10" y="43" width="394" height="1"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="L8R-Ac-gjN"/>
+                                                                </constraints>
+                                                            </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbc-JH-RfF" userLabel="Add Play Button">
                                                                 <rect key="frame" x="359" y="-0.5" width="45" height="45"/>
                                                                 <constraints>
@@ -169,8 +176,10 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="JbW-3f-Xxb" firstAttribute="centerY" secondItem="0AC-im-sDU" secondAttribute="centerY" id="0Bt-6F-ARf"/>
+                                                            <constraint firstItem="K9m-ZI-yqA" firstAttribute="width" secondItem="0AC-im-sDU" secondAttribute="width" constant="-20" id="0gf-gt-vfY"/>
                                                             <constraint firstAttribute="bottom" secondItem="Ll7-u4-bjB" secondAttribute="bottom" constant="10" id="6Ky-jF-ieg"/>
                                                             <constraint firstAttribute="trailing" secondItem="Dbc-JH-RfF" secondAttribute="trailing" constant="10" id="7yg-EQ-wei"/>
+                                                            <constraint firstItem="K9m-ZI-yqA" firstAttribute="centerX" secondItem="0AC-im-sDU" secondAttribute="centerX" id="8CV-C7-Jfn"/>
                                                             <constraint firstItem="JbW-3f-Xxb" firstAttribute="leading" secondItem="Ll7-u4-bjB" secondAttribute="trailing" id="JR6-cx-qQT"/>
                                                             <constraint firstItem="Ll7-u4-bjB" firstAttribute="leading" secondItem="0AC-im-sDU" secondAttribute="leading" constant="5" id="LhA-ca-zD1"/>
                                                             <constraint firstItem="Ll7-u4-bjB" firstAttribute="top" secondItem="0AC-im-sDU" secondAttribute="top" constant="10" id="bsO-83-3Tm"/>
@@ -178,6 +187,7 @@
                                                             <constraint firstItem="JbW-3f-Xxb" firstAttribute="trailing" secondItem="Dbc-JH-RfF" secondAttribute="leading" id="g5x-3Z-9jQ"/>
                                                             <constraint firstItem="Dbc-JH-RfF" firstAttribute="height" secondItem="0AC-im-sDU" secondAttribute="height" constant="1" id="wP5-n3-wAh"/>
                                                             <constraint firstItem="JbW-3f-Xxb" firstAttribute="width" secondItem="JbW-3f-Xxb" secondAttribute="height" multiplier="1:1" id="y6J-Kb-Xv4"/>
+                                                            <constraint firstAttribute="bottom" secondItem="K9m-ZI-yqA" secondAttribute="bottom" id="znw-UA-LqF"/>
                                                         </constraints>
                                                     </tableViewCellContentView>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
