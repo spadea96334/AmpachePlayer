@@ -126,11 +126,11 @@
 		BE1F29792510A12500BFB536 /* AmpachePlayer */ = {
 			isa = PBXGroup;
 			children = (
+				BE592EC82518806100D27680 /* Audio */,
 				BE1F29AA2510B56C00BFB536 /* Api */,
 				BE6C219A251345AC00A29372 /* UI */,
 				BE1F297A2510A12500BFB536 /* AppDelegate.swift */,
 				BEAB2E702514548200BA3186 /* PlayerSetting.swift */,
-				BE6C219B2513474400A29372 /* AudioPlayer.swift */,
 				BE1F297C2510A12500BFB536 /* SceneDelegate.swift */,
 				BE1F29802510A12500BFB536 /* Main.storyboard */,
 				BE1F29832510A12500BFB536 /* Assets.xcassets */,
@@ -188,13 +188,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE592EC82518806100D27680 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				BE6C219B2513474400A29372 /* AudioPlayer.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		BE6C219A251345AC00A29372 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				BEAB2E6D25144AB700BA3186 /* Views */,
 				BE1F297E2510A12500BFB536 /* LoginViewController.swift */,
 				BE6C219825133C5300A29372 /* PlayerViewController.swift */,
-				BE6C219625132DA200A29372 /* MediaCell.swift */,
 				BE837B9C2512072D00BACA5D /* MediaListViewController.swift */,
 			);
 			path = UI;
@@ -203,6 +210,7 @@
 		BEAB2E6D25144AB700BA3186 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BE6C219625132DA200A29372 /* MediaCell.swift */,
 				BEAB2E6E25144AD300BA3186 /* PlayButton.swift */,
 			);
 			path = Views;
