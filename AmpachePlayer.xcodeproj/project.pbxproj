@@ -17,6 +17,8 @@
 		BE1F299D2510A12500BFB536 /* AmpachePlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F299C2510A12500BFB536 /* AmpachePlayerUITests.swift */; };
 		BE1F29AC2510B5A100BFB536 /* AmpacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F29AB2510B5A100BFB536 /* AmpacheManager.swift */; };
 		BE1F29AE2510BA1000BFB536 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F29AD2510BA1000BFB536 /* LoginModel.swift */; };
+		BE592ECA2518811B00D27680 /* PlayingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE592EC92518811B00D27680 /* PlayingListViewController.swift */; };
+		BE592ECC251882D000D27680 /* PlayingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE592ECB251882D000D27680 /* PlayingCell.swift */; };
 		BE6C21952513162E00A29372 /* MediaListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C21942513162E00A29372 /* MediaListModel.swift */; };
 		BE6C219725132DA200A29372 /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C219625132DA200A29372 /* MediaCell.swift */; };
 		BE6C219925133C5300A29372 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C219825133C5300A29372 /* PlayerViewController.swift */; };
@@ -65,6 +67,8 @@
 		BE1F29AD2510BA1000BFB536 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		BE1F29B12510BE5C00BFB536 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BE1F29B32510BEDE00BFB536 /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = System/Library/Frameworks/CryptoKit.framework; sourceTree = SDKROOT; };
+		BE592EC92518811B00D27680 /* PlayingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingListViewController.swift; sourceTree = "<group>"; };
+		BE592ECB251882D000D27680 /* PlayingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCell.swift; sourceTree = "<group>"; };
 		BE6C21942513162E00A29372 /* MediaListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListModel.swift; sourceTree = "<group>"; };
 		BE6C219625132DA200A29372 /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
 		BE6C219825133C5300A29372 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 				BEAB2E6D25144AB700BA3186 /* Views */,
 				BE1F297E2510A12500BFB536 /* LoginViewController.swift */,
 				BE6C219825133C5300A29372 /* PlayerViewController.swift */,
+				BE592EC92518811B00D27680 /* PlayingListViewController.swift */,
 				BE837B9C2512072D00BACA5D /* MediaListViewController.swift */,
 			);
 			path = UI;
@@ -212,6 +217,7 @@
 			children = (
 				BE6C219625132DA200A29372 /* MediaCell.swift */,
 				BEAB2E6E25144AD300BA3186 /* PlayButton.swift */,
+				BE592ECB251882D000D27680 /* PlayingCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -351,11 +357,13 @@
 				BE6C219725132DA200A29372 /* MediaCell.swift in Sources */,
 				BE1F29AC2510B5A100BFB536 /* AmpacheManager.swift in Sources */,
 				BE837B922511B8BA00BACA5D /* AmpacheRequestBuilder.swift in Sources */,
+				BE592ECC251882D000D27680 /* PlayingCell.swift in Sources */,
 				BE1F297F2510A12500BFB536 /* LoginViewController.swift in Sources */,
 				BE6C219925133C5300A29372 /* PlayerViewController.swift in Sources */,
 				BE1F297B2510A12500BFB536 /* AppDelegate.swift in Sources */,
 				BE837B9D2512072D00BACA5D /* MediaListViewController.swift in Sources */,
 				BEAB2E6F25144AD300BA3186 /* PlayButton.swift in Sources */,
+				BE592ECA2518811B00D27680 /* PlayingListViewController.swift in Sources */,
 				BE6C21952513162E00A29372 /* MediaListModel.swift in Sources */,
 				BEAB2E712514548200BA3186 /* PlayerSetting.swift in Sources */,
 				BE837B942511C3B800BACA5D /* HandshakeModel.swift in Sources */,

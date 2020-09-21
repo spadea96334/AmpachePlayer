@@ -9,8 +9,8 @@ class AudioPlayer: NSObject {
             return self.currentMediaIndex < self.mediaList.count ? self.mediaList[self.currentMediaIndex] : nil
         }
     }
+    private(set) var mediaList: [MediaModel] = []
     
-    var mediaList: [MediaModel] = []
     var currentMediaIndex = -1
     var avAudioPlayer = AVQueuePlayer.init()
     

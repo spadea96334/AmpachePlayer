@@ -449,10 +449,10 @@
             </objects>
             <point key="canvasLocation" x="920" y="141"/>
         </scene>
-        <!--View Controller-->
+        <!--Playing List View Controller-->
         <scene sceneID="Shx-KC-ifo">
             <objects>
-                <viewController id="G6m-3P-4g5" sceneMemberID="viewController">
+                <viewController id="G6m-3P-4g5" customClass="PlayingListViewController" customModule="AmpachePlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p0F-uj-0w9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -484,7 +484,7 @@
                                             <rect key="frame" x="0.0" y="50" width="414" height="792"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <prototypes>
-                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="NuG-VK-xwI">
+                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayingCell" id="NuG-VK-xwI" customClass="PlayingCell" customModule="AmpachePlayer" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NuG-VK-xwI" id="fcE-Uj-4jG">
@@ -507,8 +507,15 @@
                                                         </constraints>
                                                     </tableViewCellContentView>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <connections>
+                                                        <outlet property="titleLabel" destination="tgl-uZ-svK" id="7du-at-qYY"/>
+                                                    </connections>
                                                 </tableViewCell>
                                             </prototypes>
+                                            <connections>
+                                                <outlet property="dataSource" destination="G6m-3P-4g5" id="eLK-dD-li7"/>
+                                                <outlet property="delegate" destination="G6m-3P-4g5" id="T4e-eW-JJ6"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                     <constraints>
@@ -534,6 +541,9 @@
                         <viewLayoutGuide key="safeArea" id="zZ2-Uo-jIa"/>
                     </view>
                     <navigationItem key="navigationItem" id="z3S-IT-COI"/>
+                    <connections>
+                        <outlet property="tableView" destination="C0I-rm-htr" id="ibv-O0-UXx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3p-dE-dQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
