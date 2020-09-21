@@ -15,6 +15,27 @@ class MediaListViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    @IBAction func playAllButtonTouchUpInside(_ sender: UIButton) {
+        let mediaList = AmpacheManager.sharedInstance.mediaList
+        
+        if mediaList.count == 0 {
+            return
+        }
+        
+        AudioPlayer.sharedInstance.addMedia(mediaList: mediaList)
+    }
+    
+    @IBAction func addAllButtonTouchUpInside(_ sender: UIButton) {
+        let mediaList = AmpacheManager.sharedInstance.mediaList
+        
+        if mediaList.count == 0 {
+            return
+        }
+        
+        AudioPlayer.sharedInstance.removeAllMedia()
+        AudioPlayer.sharedInstance.addMedia(mediaList: mediaList)
+    }
+    
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AmpacheManager.sharedInstance.mediaList.count

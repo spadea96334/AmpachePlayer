@@ -26,6 +26,28 @@ class AudioPlayer: NSObject {
         self.avAudioPlayer.pause()
     }
     
+    public func addMedia(mediaList: [MediaModel]) {
+        for media in mediaList {
+            guard let url = URL.init(string: media.url) else { continue }
+            let item = AVPlayerItem.init(url: url)
+            
+            if !self.avAudioPlayer.canInsert(item, after: nil) {
+                // Todo: show error
+            }
+            
+            self.mediaList.append(media)
+            self.avAudioPlayer.insert(item, after: nil)
+        }
+        
+        // if this is the first media, start playing
+        if self.avAudioPlayer.items().count == 1 {
+            self.avAudioPlayer.play()
+            
+            // todo: remove this after ui finish
+            self.avAudioPlayer.volume = 0.2
+        }
+    }
+    
     public func addMedia(media: MediaModel) {
         guard let url = URL.init(string: media.url) else { return }
         let item = AVPlayerItem.init(url: url)

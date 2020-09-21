@@ -133,6 +133,9 @@
                                                     </constraints>
                                                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                     <state key="normal" image="list_play"/>
+                                                    <connections>
+                                                        <action selector="playAllButtonTouchUpInside:" destination="usy-d4-Ko5" eventType="touchUpInside" id="crI-4R-KsC"/>
+                                                    </connections>
                                                 </button>
                                                 <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cem-J3-pod" userLabel="Line View">
                                                     <rect key="frame" x="0.0" y="49" width="414" height="1"/>
@@ -148,6 +151,9 @@
                                                     </constraints>
                                                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                     <state key="normal" image="add_black"/>
+                                                    <connections>
+                                                        <action selector="addAllButtonTouchUpInside:" destination="usy-d4-Ko5" eventType="touchUpInside" id="Ud2-Wd-CKC"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Songs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-Cg-4Cn">
                                                     <rect key="frame" x="10" y="10" width="68.5" height="30"/>
