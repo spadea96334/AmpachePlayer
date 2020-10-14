@@ -22,6 +22,7 @@ class MediaListViewController: UIViewController, UITableViewDelegate, UITableVie
             return
         }
         
+        AudioPlayer.sharedInstance.removeAllMedia()
         AudioPlayer.sharedInstance.addMedia(mediaList: mediaList)
     }
     
@@ -32,7 +33,6 @@ class MediaListViewController: UIViewController, UITableViewDelegate, UITableVie
             return
         }
         
-        AudioPlayer.sharedInstance.removeAllMedia()
         AudioPlayer.sharedInstance.addMedia(mediaList: mediaList)
     }
     
