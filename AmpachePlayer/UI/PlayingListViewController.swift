@@ -31,7 +31,6 @@ class PlayingListViewController: UIViewController, UITableViewDataSource {
         guard let playingCell = cell as? PlayingCell else { return cell! }
         
         playingCell.media = AudioPlayer.sharedInstance.mediaList[indexPath.row]
-        playingCell.isSelected = true
         
         return playingCell
     }
