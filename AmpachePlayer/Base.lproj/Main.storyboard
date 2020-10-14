@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -407,12 +407,24 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bN3-qO-yYA" userLabel="Next Button">
+                                            <rect key="frame" x="279" y="509" width="64" height="64"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="64" id="H9X-hs-aqP"/>
+                                                <constraint firstAttribute="width" secondItem="bN3-qO-yYA" secondAttribute="height" multiplier="1:1" id="Yyy-t5-4Ss"/>
+                                            </constraints>
+                                            <state key="normal" image="next_button"/>
+                                            <connections>
+                                                <action selector="nextButtonTouchUpInside" destination="ATV-mP-QdC" eventType="touchUpInside" id="I3h-aO-vQf"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="81Z-dj-KDJ" firstAttribute="centerX" secondItem="Vb0-N4-pOS" secondAttribute="centerX" id="4yX-Fn-Opc"/>
                                         <constraint firstItem="iuS-L9-SbN" firstAttribute="width" secondItem="Vb0-N4-pOS" secondAttribute="width" multiplier="0.6" id="5lJ-GM-2R0"/>
                                         <constraint firstItem="5S8-H8-9wr" firstAttribute="leading" secondItem="Vb0-N4-pOS" secondAttribute="leading" constant="10" id="E4H-4u-3da"/>
                                         <constraint firstItem="fV1-av-Yen" firstAttribute="centerX" secondItem="iuS-L9-SbN" secondAttribute="centerX" id="ERa-Yo-UxS"/>
+                                        <constraint firstItem="bN3-qO-yYA" firstAttribute="centerY" secondItem="fV1-av-Yen" secondAttribute="centerY" id="JEr-IR-vFK"/>
                                         <constraint firstItem="iuS-L9-SbN" firstAttribute="centerX" secondItem="Vb0-N4-pOS" secondAttribute="centerX" id="P4b-KX-6jM"/>
                                         <constraint firstItem="fV1-av-Yen" firstAttribute="top" secondItem="81Z-dj-KDJ" secondAttribute="bottom" constant="30" id="Twl-WR-2HH"/>
                                         <constraint firstItem="5S8-H8-9wr" firstAttribute="centerX" secondItem="Vb0-N4-pOS" secondAttribute="centerX" id="ZvM-AR-9Se"/>
@@ -420,6 +432,7 @@
                                         <constraint firstItem="iuS-L9-SbN" firstAttribute="centerY" secondItem="Vb0-N4-pOS" secondAttribute="centerY" multiplier="0.6" id="ifK-fc-d1N"/>
                                         <constraint firstItem="81Z-dj-KDJ" firstAttribute="top" secondItem="iuS-L9-SbN" secondAttribute="bottom" constant="50" id="qvR-gF-JQj"/>
                                         <constraint firstAttribute="bottom" secondItem="5S8-H8-9wr" secondAttribute="bottom" constant="70" id="sKR-VO-3bv"/>
+                                        <constraint firstItem="bN3-qO-yYA" firstAttribute="leading" secondItem="fV1-av-Yen" secondAttribute="trailing" constant="40" id="utq-3u-IN3"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="systemUltraThinMaterialLight"/>
@@ -447,7 +460,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bS-la-Yra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920" y="141"/>
+            <point key="canvasLocation" x="918.84057971014499" y="140.625"/>
         </scene>
         <!--Playing List View Controller-->
         <scene sceneID="Shx-KC-ifo">
@@ -556,6 +569,7 @@
         <image name="blank_album" width="128" height="128"/>
         <image name="list_button" width="512" height="512"/>
         <image name="list_play" width="512" height="512"/>
+        <image name="next_button" width="512" height="512"/>
         <image name="play_button" width="512" height="512"/>
         <image name="playing_list" width="512" height="512"/>
         <image name="settings" width="512" height="512"/>

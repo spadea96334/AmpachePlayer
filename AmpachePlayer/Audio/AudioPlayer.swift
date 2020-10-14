@@ -26,6 +26,14 @@ class AudioPlayer: NSObject {
         self.avAudioPlayer.pause()
     }
     
+    public func next() {
+        if currentMediaIndex == self.mediaList.count - 1 {
+            return
+        }
+        
+        self.avAudioPlayer.advanceToNextItem()
+    }
+    
     public func addMedia(mediaList: [MediaModel]) {
         // Temporarily disable this function ,because AVQueuePlayer stuck when adding a lot of item
         // Todo: Implement a queue to replace queue of AVQueuePlayer

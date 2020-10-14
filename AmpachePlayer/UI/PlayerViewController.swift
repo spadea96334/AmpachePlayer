@@ -30,6 +30,7 @@ class PlayerViewController: UIViewController {
         }
     }
     
+    // MARK: - Button Event
     @IBAction func playButtonTouchUpInside(_ sender: PlayButton) {
         if sender.playStatus == .paused {
             AudioPlayer.sharedInstance.play()
@@ -37,5 +38,10 @@ class PlayerViewController: UIViewController {
             AudioPlayer.sharedInstance.pause()
         }
     }
+    
+    @IBAction func nextButtonTouchUpInside() {
+        AudioPlayer.sharedInstance.next()
+    }
+    
 }
 
