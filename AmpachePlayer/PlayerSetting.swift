@@ -3,10 +3,11 @@ import Foundation
 class PlayerSetting: NSObject {
     
     public static let sharedInstance = PlayerSetting.init()
+    private(set) var account = ""
+    private(set) var serverUrl = "https://"
     private(set) var handshakeModel: HandshakeModel?
-    private(set) var serverUrl: String?
     
-    func saveLoginInfo(model: HandshakeModel, url: String) {
+    func setLoginInfo(model: HandshakeModel, url: String) {
         self.serverUrl = url
         self.handshakeModel = model
         let data = try? JSONEncoder().encode(self.handshakeModel)
@@ -18,7 +19,13 @@ class PlayerSetting: NSObject {
             return
         }
         
-        UserDefaults.standard.set(self.serverUrl!, forKey: "serverUrl")
+        UserDefaults.standard.set(self.serverUrl, forKey: "serverUrl")
+        UserDefaults.standard.synchronize()
+    }
+    
+    func setAccount(_ account: String) {
+        self.account = account
+        UserDefaults.standard.set(account, forKey: "account")
         UserDefaults.standard.synchronize()
     }
     
@@ -26,8 +33,10 @@ class PlayerSetting: NSObject {
         guard let data = UserDefaults.standard.value(forKey: "handshake") as? Data else { return }
         guard let model = try? JSONDecoder().decode(HandshakeModel.self, from: data) else { return }
         guard let serverUrl = UserDefaults.standard.value(forKey: "serverUrl") as? String else { return }
+        guard let account = UserDefaults.standard.value(forKey: "account") as? String else { return }
+        self.account = account
         self.serverUrl = serverUrl
-           
+
         if !model.isEmpty() {
             self.handshakeModel = model
             

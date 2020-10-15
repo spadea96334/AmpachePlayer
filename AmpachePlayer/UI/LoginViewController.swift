@@ -10,10 +10,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.loadSetting()
         if PlayerSetting.sharedInstance.handshakeModel != nil {
             self.login(model: PlayerSetting.sharedInstance.handshakeModel!)
         }
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -23,8 +23,13 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func loadSetting() {
+        self.accountTextField.text = PlayerSetting.sharedInstance.account
+        self.serverTextField.text = PlayerSetting.sharedInstance.serverUrl
+    }
+    
     func login(model: HandshakeModel) {
-        guard let url = PlayerSetting.sharedInstance.serverUrl else { return }
+        let url = PlayerSetting.sharedInstance.serverUrl
         let model = PlayerSetting.sharedInstance.handshakeModel!
         self.changeLoginButton(isLogging: true)
         AmpacheManager.sharedInstance.login(model: model, url: url) { (error: ErrorModel?) in
@@ -63,7 +68,8 @@ class LoginViewController: UIViewController {
             }
             
             guard let handshakeModel = AmpacheManager.sharedInstance.handshakeModel else { return }
-            PlayerSetting.sharedInstance.saveLoginInfo(model: handshakeModel, url: model.serverUrl)
+            PlayerSetting.sharedInstance.setLoginInfo(model: handshakeModel, url: model.serverUrl)
+            PlayerSetting.sharedInstance.setAccount(model.account)
         }
     }
     
