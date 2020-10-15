@@ -400,12 +400,18 @@
                                                 <action selector="playButtonTouchUpInside:" destination="ATV-mP-QdC" eventType="touchUpInside" id="C0p-I9-g2b"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81Z-dj-KDJ" userLabel="Media Title Label">
-                                            <rect key="frame" x="172" y="443" width="70" height="36"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81Z-dj-KDJ" userLabel="Media Title Label">
+                                            <rect key="frame" x="10" y="443" width="394" height="36"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="minimumScaleFactor">
+                                                    <real key="value" value="0.10000000000000001"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bN3-qO-yYA" userLabel="Next Button">
                                             <rect key="frame" x="279" y="509" width="64" height="64"/>
@@ -422,6 +428,7 @@
                                     <constraints>
                                         <constraint firstItem="81Z-dj-KDJ" firstAttribute="centerX" secondItem="Vb0-N4-pOS" secondAttribute="centerX" id="4yX-Fn-Opc"/>
                                         <constraint firstItem="iuS-L9-SbN" firstAttribute="width" secondItem="Vb0-N4-pOS" secondAttribute="width" multiplier="0.6" id="5lJ-GM-2R0"/>
+                                        <constraint firstItem="81Z-dj-KDJ" firstAttribute="width" secondItem="Vb0-N4-pOS" secondAttribute="width" constant="-20" id="6cm-Ra-78L"/>
                                         <constraint firstItem="5S8-H8-9wr" firstAttribute="leading" secondItem="Vb0-N4-pOS" secondAttribute="leading" constant="10" id="E4H-4u-3da"/>
                                         <constraint firstItem="fV1-av-Yen" firstAttribute="centerX" secondItem="iuS-L9-SbN" secondAttribute="centerX" id="ERa-Yo-UxS"/>
                                         <constraint firstItem="bN3-qO-yYA" firstAttribute="centerY" secondItem="fV1-av-Yen" secondAttribute="centerY" id="JEr-IR-vFK"/>
