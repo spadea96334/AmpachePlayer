@@ -6,7 +6,7 @@ class AudioPlayer: NSObject {
     public static let sharedInstance = AudioPlayer.init()
     public var currentMedia: MediaModel? {
         get {
-            return self.currentMediaIndex < self.mediaList.count ? self.mediaList[self.currentMediaIndex] : nil
+            return self.currentMediaIndex > -1 && self.currentMediaIndex < self.mediaList.count ? self.mediaList[self.currentMediaIndex] : nil
         }
     }
     private(set) var mediaList: [MediaModel] = []
@@ -108,9 +108,11 @@ class AudioPlayer: NSObject {
     
     func onCurrentItemChanged() {
         let mediaItems = self.avAudioPlayer.items()
-        
         if mediaItems.count < QUEUE_LENGTH {
-            self.currentMediaIndex += 1
+            if self.currentMediaIndex + 1 < self.mediaList.count {
+                self.currentMediaIndex += 1
+            }
+            
             _ = self.fillItemToAudioPlayer()
         }
     }
