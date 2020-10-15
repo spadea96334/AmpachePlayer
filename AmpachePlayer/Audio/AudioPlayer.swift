@@ -14,6 +14,7 @@ class AudioPlayer: NSObject {
     let QUEUE_LENGTH = 2
     var currentMediaIndex = -1
     var avAudioPlayer = AVQueuePlayer.init()
+    var isFilling = false
 
     public func addObserverForPlayerState(_ observer: NSObject){
         self.avAudioPlayer.addObserver(observer, forKeyPath: "timeControlStatus", options: NSKeyValueObservingOptions.new, context: nil)
@@ -62,14 +63,19 @@ class AudioPlayer: NSObject {
     }
     
     public func removeAllMedia() {
+        self.mediaList = []
+        self.currentMediaIndex = -1
         self.avAudioPlayer.pause()
         self.avAudioPlayer.removeAllItems()
-        self.currentMediaIndex = -1
-        self.mediaList = []
+        
     }
     
     func fillItemToAudioPlayer() -> Bool {
         // is last media
+        if self.isFilling {
+            return false
+        }
+        
         guard self.currentMediaIndex < self.mediaList.count - 1 else {
             return false
         }
@@ -79,18 +85,22 @@ class AudioPlayer: NSObject {
             return false
         }
         
+        self.isFilling = true
+        let needFillLength = QUEUE_LENGTH - self.avAudioPlayer.items().count
         let remainMedia = self.mediaList.count - self.currentMediaIndex - 1
         // Append media until avplayer's item count equal to QUEUE_LENGTH or no media
-        for i in self.currentMediaIndex + 1...self.currentMediaIndex + min(QUEUE_LENGTH, remainMedia) {
+        for i in self.currentMediaIndex + 1...self.currentMediaIndex + min(needFillLength, remainMedia) {
             let mediaModel = self.mediaList[i]
             guard let mediaUrl = URL.init(string: mediaModel.url) else { return false }
             let item = AVPlayerItem.init(url: mediaUrl)
             
             guard self.avAudioPlayer.canInsert(item, after: self.avAudioPlayer.currentItem) else {
+                self.isFilling = false
                 return false
             }
             
             self.avAudioPlayer.insert(item, after: self.avAudioPlayer.currentItem)
+            self.isFilling = false
         }
 
         return true
