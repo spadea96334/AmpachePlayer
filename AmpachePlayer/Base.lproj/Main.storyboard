@@ -138,10 +138,10 @@
                                                     </connections>
                                                 </button>
                                                 <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cem-J3-pod" userLabel="Line View">
-                                                    <rect key="frame" x="0.0" y="49" width="414" height="1"/>
+                                                    <rect key="frame" x="0.0" y="49.5" width="414" height="0.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="qgL-up-aAa"/>
+                                                        <constraint firstAttribute="height" constant="0.5" id="qgL-up-aAa"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ibh-jY-cWh">
@@ -492,11 +492,21 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view alpha="0.15000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbv-Qn-vC1" userLabel="Line View">
+                                                    <rect key="frame" x="0.0" y="49.5" width="414" height="0.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="uW0-Zm-sKG"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Rbv-Qn-vC1" secondAttribute="trailing" id="8J1-Y4-5un"/>
+                                                <constraint firstItem="Rbv-Qn-vC1" firstAttribute="leading" secondItem="6bP-qI-o7Z" secondAttribute="leading" id="HCw-Xj-y3B"/>
                                                 <constraint firstItem="1I9-hU-nvQ" firstAttribute="centerY" secondItem="6bP-qI-o7Z" secondAttribute="centerY" id="JFT-7F-nnX"/>
                                                 <constraint firstAttribute="height" constant="50" id="eFV-Hj-rdk"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rbv-Qn-vC1" secondAttribute="bottom" id="uq4-7o-5wL"/>
                                                 <constraint firstItem="1I9-hU-nvQ" firstAttribute="leading" secondItem="6bP-qI-o7Z" secondAttribute="leading" constant="10" id="zIm-ul-HzQ"/>
                                             </constraints>
                                         </view>
