@@ -43,5 +43,8 @@ class PlayerViewController: UIViewController {
         AudioPlayer.sharedInstance.next()
     }
     
+    @IBAction func previousButtonTouchUpInside() {
+        AudioPlayer.sharedInstance.previous()
+    }
 }
 

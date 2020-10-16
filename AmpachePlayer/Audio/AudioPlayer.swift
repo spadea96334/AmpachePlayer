@@ -36,6 +36,23 @@ class AudioPlayer: NSObject {
         self.avAudioPlayer.advanceToNextItem()
     }
     
+    public func previous() {
+        if self.avAudioPlayer.items().count == 0 || self.currentMediaIndex <= 0 {
+            return
+        }
+        
+        self.avAudioPlayer.pause()
+        self.currentMediaIndex -= 2
+        
+        for i in 1..<self.avAudioPlayer.items().count {
+            self.avAudioPlayer.remove(self.avAudioPlayer.items()[i])
+        }
+        
+        guard let mediaUrl = URL.init(string: self.mediaList[self.currentMediaIndex + 1].url) else { return }
+        self.avAudioPlayer.replaceCurrentItem(with: AVPlayerItem.init(url: mediaUrl))
+        self.avAudioPlayer.play()
+    }
+    
     public func addMedia(mediaList: [MediaModel]) {
         self.mediaList += mediaList
         
@@ -94,14 +111,15 @@ class AudioPlayer: NSObject {
             guard let mediaUrl = URL.init(string: mediaModel.url) else { return false }
             let item = AVPlayerItem.init(url: mediaUrl)
             
-            guard self.avAudioPlayer.canInsert(item, after: self.avAudioPlayer.currentItem) else {
+            guard self.avAudioPlayer.canInsert(item, after: nil) else {
                 self.isFilling = false
                 return false
             }
             
-            self.avAudioPlayer.insert(item, after: self.avAudioPlayer.currentItem)
-            self.isFilling = false
+            self.avAudioPlayer.insert(item, after: nil)
         }
+        
+        self.isFilling = false
 
         return true
     }
