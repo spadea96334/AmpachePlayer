@@ -12,13 +12,12 @@ class PlayerSetting: NSObject {
         self.handshakeModel = model
         let data = try? JSONEncoder().encode(self.handshakeModel)
         
-        if data != nil {
-            UserDefaults.standard.set(data, forKey: "handshake")
-        } else {
+        if data == nil {
             NSLog("Can't encode handshake model")
             return
         }
         
+        UserDefaults.standard.set(data, forKey: "handshake")
         UserDefaults.standard.set(self.serverUrl, forKey: "serverUrl")
         UserDefaults.standard.synchronize()
     }
