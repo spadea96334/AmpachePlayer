@@ -35,12 +35,7 @@ class PlayerSetting: NSObject {
         guard let account = UserDefaults.standard.value(forKey: "account") as? String else { return }
         self.account = account
         self.serverUrl = serverUrl
-
-        if !model.isEmpty() {
-            self.handshakeModel = model
-            
-            return
-        }
+        self.handshakeModel = model
     }
     
     private override init() {
