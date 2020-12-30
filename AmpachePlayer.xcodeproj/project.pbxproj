@@ -17,6 +17,7 @@
 		BE1F299D2510A12500BFB536 /* AmpachePlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F299C2510A12500BFB536 /* AmpachePlayerUITests.swift */; };
 		BE1F29AC2510B5A100BFB536 /* AmpacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F29AB2510B5A100BFB536 /* AmpacheManager.swift */; };
 		BE1F29AE2510BA1000BFB536 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F29AD2510BA1000BFB536 /* LoginModel.swift */; };
+		BE55C5AC259B080F0085627B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE55C5AB259B080F0085627B /* NetworkManager.swift */; };
 		BE592ECA2518811B00D27680 /* PlayingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE592EC92518811B00D27680 /* PlayingListViewController.swift */; };
 		BE592ECC251882D000D27680 /* PlayingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE592ECB251882D000D27680 /* PlayingCell.swift */; };
 		BE6C21952513162E00A29372 /* MediaListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C21942513162E00A29372 /* MediaListModel.swift */; };
@@ -67,6 +68,7 @@
 		BE1F29AD2510BA1000BFB536 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		BE1F29B12510BE5C00BFB536 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BE1F29B32510BEDE00BFB536 /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = System/Library/Frameworks/CryptoKit.framework; sourceTree = SDKROOT; };
+		BE55C5AB259B080F0085627B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BE592EC92518811B00D27680 /* PlayingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingListViewController.swift; sourceTree = "<group>"; };
 		BE592ECB251882D000D27680 /* PlayingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCell.swift; sourceTree = "<group>"; };
 		BE6C21942513162E00A29372 /* MediaListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListModel.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				BE592EC82518806100D27680 /* Audio */,
 				BE1F29AA2510B56C00BFB536 /* Api */,
+				BE55C5AA259B06CD0085627B /* Network */,
 				BE6C219A251345AC00A29372 /* UI */,
 				BE1F297A2510A12500BFB536 /* AppDelegate.swift */,
 				BEAB2E702514548200BA3186 /* PlayerSetting.swift */,
@@ -190,6 +193,14 @@
 				BE1F29B12510BE5C00BFB536 /* Security.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE55C5AA259B06CD0085627B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BE55C5AB259B080F0085627B /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		BE592EC82518806100D27680 /* Audio */ = {
@@ -353,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE55C5AC259B080F0085627B /* NetworkManager.swift in Sources */,
 				BE1F29AE2510BA1000BFB536 /* LoginModel.swift in Sources */,
 				BE6C219725132DA200A29372 /* MediaCell.swift in Sources */,
 				BE1F29AC2510B5A100BFB536 /* AmpacheManager.swift in Sources */,

@@ -8,7 +8,6 @@ class AmpacheManager: NSObject {
     private(set) var isLogin = false
     private(set) var mediaList: MediaList = []
 
-    let session = URLSession.init(configuration: URLSessionConfiguration.default)
     var serverUrl: String?
     
     public func ping(completionHandler: @escaping (ErrorModel?) -> Void) {
@@ -16,22 +15,9 @@ class AmpacheManager: NSObject {
         _ = builder.appendArg(name: "auth", value: self.handshakeModel!.auth)
         guard let request = builder.build() else { return }
         
-        let dataTask = session.dataTask(with: request) { (data:Data?, response:URLResponse?, error:Error?) in
-            if error != nil || data == nil {
-                return
-            }
-            
-            let errorModel = try? JSONDecoder.init().decode(ErrorModel.self, from: data!)
-            
-            if errorModel != nil {
-                completionHandler(errorModel)
-                return
-            }
-            
-            completionHandler(nil)
+        NetworkManager.sharedInstance.sendRequest(request: request) { (data:Data?, error:ErrorModel?) in
+            completionHandler(error)
         }
-        
-        dataTask.resume()
     }
     
     public func login(model: HandshakeModel, url: String ,completionHandler: @escaping (ErrorModel?) -> Void) {
@@ -63,62 +49,55 @@ class AmpacheManager: NSObject {
         self.serverUrl = model.serverUrl
         let requestBuilder = AmpacheRequestBuilder.init(action: .handshake, url: self.serverUrl!)
         _ = requestBuilder.setLoginInfo(model: model)
-        guard let request = requestBuilder.build() else {return}
+        guard let request = requestBuilder.build() else { return }
         
-        let dataTask = session.dataTask(with: request) { (data:Data?, response:URLResponse?, error:Error?) in
-            if error != nil || data == nil {
+        NetworkManager.sharedInstance.sendRequest(request: request) { (data:Data?, error:ErrorModel?) in
+            if error != nil {
+                completionHandler(error)
                 return
             }
             
             let handshakeModel = try? JSONDecoder.init().decode(HandshakeModel.self, from: data!)
-            
-            if handshakeModel != nil {
-                self.isLogin = true
-                self.handshakeModel = handshakeModel
-                self.getMediaList { (error: ErrorModel?) in
-                    completionHandler(nil)
-                }
-                
+            if handshakeModel == nil {
+                let errorMessage = "Can't parse login response"
+                let responseError = ErrorModel.init(error: ErrorMessage.init(code: "-100", message: errorMessage))
+                completionHandler(responseError)
                 return
             }
             
-            let errorModel = try? JSONDecoder.init().decode(ErrorModel.self, from: data!)
-            
-            if errorModel != nil {
-                completionHandler(errorModel)
-                return
+            self.isLogin = true
+            self.handshakeModel = handshakeModel
+            self.getMediaList { (error: ErrorModel?) in
+                completionHandler(nil)
             }
-            
-            print("No expect condition in login process")
         }
-        
-        dataTask.resume()
     }
     
     public func getArt(media: MediaModel, completionHandler: @escaping (UIImage?) -> Void) {
         guard let artUrl = URL.init(string: media.art) else { return }
+        let request = URLRequest.init(url: artUrl)
         
-        let dataTask = self.session.dataTask(with: artUrl) { (data: Data?, response: URLResponse?, error: Error?) in
-            if error != nil || data == nil {
+        NetworkManager.sharedInstance.sendRequest(request: request) { (data:Data?, error:ErrorModel?) in
+            if error != nil {
                 completionHandler(nil)
+                return
             }
             
             completionHandler(UIImage.init(data: data!))
         }
-        
-        dataTask.resume()
     }
     
     func getMediaList(completionHandler: @escaping (ErrorModel?) -> Void) {
         let requestBuilder = AmpacheRequestBuilder.init(action: .getIndexes, url: self.serverUrl!)
         _ = requestBuilder.appendArg(name: "type", value: "song").appendArg(name: "auth", value: self.handshakeModel!.auth)
-        guard let request = requestBuilder.build() else {return}
+        guard let request = requestBuilder.build() else { return }
         
-        let dataTask = session.dataTask(with: request) { (data:Data?, response:URLResponse?, error:Error?) in
-            if error != nil || data == nil {
+        NetworkManager.sharedInstance.sendRequest(request: request) { (data:Data?, error:ErrorModel?) in
+            if error != nil {
+                completionHandler(error)
                 return
             }
-           
+            
             var mediaList: MediaList?
             do {
                 mediaList = try JSONDecoder.init().decode(MediaList.self, from: data!)
@@ -126,24 +105,17 @@ class AmpacheManager: NSObject {
                 NSLog("Error parse media info: " + error.localizedDescription)
             }
             
-            if mediaList != nil {
-                self.mediaList = mediaList!
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MediaListChanged"), object: nil)
-                completionHandler(nil)
-                
+            if mediaList == nil {
+                let errorMessage = "Can't parse mediaList response"
+                let responseError = ErrorModel.init(error: ErrorMessage.init(code: "-100", message: errorMessage))
+                completionHandler(responseError)
                 return
             }
             
-            let errorModel = try? JSONDecoder.init().decode(ErrorModel.self, from: data!)
-            
-            if errorModel != nil {
-                print(errorModel!.error.message)
-                completionHandler(errorModel)
-                return
-            }
+            self.mediaList = mediaList!
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MediaListChanged"), object: nil)
+            completionHandler(nil)
         }
-        
-        dataTask.resume()
     }
     
     private override init() {
