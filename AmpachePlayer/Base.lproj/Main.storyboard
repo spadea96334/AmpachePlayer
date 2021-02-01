@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +40,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" keyboardType="URL" textContentType="url"/>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDW-da-PO5">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDW-da-PO5">
                                             <rect key="frame" x="52" y="485" width="310.5" height="38"/>
                                             <color key="backgroundColor" red="0.99215686270000003" green="0.54117647059999996" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -86,6 +87,7 @@
                                 <blurEffect style="systemUltraThinMaterialLight"/>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YaC-EH-Aes" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="50S-wb-iC5"/>
@@ -95,7 +97,6 @@
                             <constraint firstItem="7Qb-n6-Jum" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="itm-jS-fQV"/>
                             <constraint firstItem="7Qb-n6-Jum" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="rrR-Do-0cL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="accountTextField" destination="lmC-yI-JbA" id="dIf-s8-sKp"/>
@@ -271,6 +272,7 @@
                                 <blurEffect style="systemUltraThinMaterialLight"/>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="djb-Se-sha"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="iVs-wP-rUv" secondAttribute="trailing" id="9CU-Of-f44"/>
@@ -278,7 +280,6 @@
                             <constraint firstItem="iVs-wP-rUv" firstAttribute="top" secondItem="djb-Se-sha" secondAttribute="top" id="aVm-XX-1Ia"/>
                             <constraint firstAttribute="bottom" secondItem="iVs-wP-rUv" secondAttribute="bottom" id="vxE-92-oly"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="djb-Se-sha"/>
                     </view>
                     <navigationItem key="navigationItem" id="9lw-D3-ifo"/>
                     <connections>
@@ -336,7 +337,7 @@
                                                             <constraint firstAttribute="width" secondItem="Kmy-22-hlh" secondAttribute="height" multiplier="1:1" id="NG3-JC-vPU"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlO-98-lHv" userLabel="Settings Button">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlO-98-lHv" userLabel="Settings Button">
                                                         <rect key="frame" x="295.5" y="5" width="98.5" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
@@ -459,6 +460,7 @@
                                 <blurEffect style="systemUltraThinMaterialLight"/>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="MXZ-sz-a7k"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ILs-qf-rmH" secondAttribute="bottom" id="4Wg-uH-X7n"/>
@@ -470,7 +472,6 @@
                             <constraint firstAttribute="trailing" secondItem="wf3-BO-rlc" secondAttribute="trailing" id="olh-qm-4TF"/>
                             <constraint firstItem="ILs-qf-rmH" firstAttribute="top" secondItem="FJX-BZ-mGe" secondAttribute="top" id="sSi-dp-4mU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="MXZ-sz-a7k"/>
                     </view>
                     <connections>
                         <outlet property="artImageView" destination="iuS-L9-SbN" id="y38-ni-7Ih"/>
@@ -575,6 +576,7 @@
                                 <blurEffect style="systemUltraThinMaterialLight"/>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="zZ2-Uo-jIa"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Dqa-5R-FLp" firstAttribute="leading" secondItem="p0F-uj-0w9" secondAttribute="leading" id="1Fu-lK-fDp"/>
@@ -582,7 +584,6 @@
                             <constraint firstAttribute="trailing" secondItem="Dqa-5R-FLp" secondAttribute="trailing" id="gAA-P6-cMi"/>
                             <constraint firstAttribute="bottom" secondItem="Dqa-5R-FLp" secondAttribute="bottom" id="oeT-IN-iA1"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zZ2-Uo-jIa"/>
                     </view>
                     <navigationItem key="navigationItem" id="z3S-IT-COI"/>
                     <connections>
