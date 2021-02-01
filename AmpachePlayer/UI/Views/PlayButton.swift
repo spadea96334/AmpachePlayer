@@ -11,14 +11,12 @@ class PlayButton: UIButton {
     }
     
     func updateIcon() {
-        guard self.imageView != nil else { return }
-        
         switch self.playStatus {
         case AVPlayer.TimeControlStatus.paused:
-            self.imageView!.image = UIImage.init(named: "play_button")
+            self.setImage(UIImage.init(named: "play_button"), for: .normal)
             break
         default:
-            self.imageView!.image = UIImage.init(named: "pause_button")
+            self.setImage(UIImage.init(named: "pause_button"), for: .normal)
         }
     }
     
