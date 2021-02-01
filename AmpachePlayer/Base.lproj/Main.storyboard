@@ -452,10 +452,27 @@
                                         <constraint firstItem="fV1-av-Yen" firstAttribute="leading" secondItem="yLn-z4-IBv" secondAttribute="trailing" constant="40" id="aQ2-aQ-PLe"/>
                                         <constraint firstAttribute="trailing" secondItem="5S8-H8-9wr" secondAttribute="trailing" constant="10" id="flx-1m-D7L"/>
                                         <constraint firstItem="iuS-L9-SbN" firstAttribute="centerY" secondItem="Vb0-N4-pOS" secondAttribute="centerY" multiplier="0.6" id="ifK-fc-d1N"/>
+                                        <constraint firstItem="iuS-L9-SbN" firstAttribute="width" secondItem="Vb0-N4-pOS" secondAttribute="width" multiplier="0.3" id="mco-Fi-rlc"/>
                                         <constraint firstItem="81Z-dj-KDJ" firstAttribute="top" secondItem="iuS-L9-SbN" secondAttribute="bottom" constant="50" id="qvR-gF-JQj"/>
                                         <constraint firstAttribute="bottom" secondItem="5S8-H8-9wr" secondAttribute="bottom" constant="70" id="sKR-VO-3bv"/>
                                         <constraint firstItem="bN3-qO-yYA" firstAttribute="leading" secondItem="fV1-av-Yen" secondAttribute="trailing" constant="40" id="utq-3u-IN3"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="5lJ-GM-2R0"/>
+                                            <exclude reference="mco-Fi-rlc"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="5lJ-GM-2R0"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <mask key="constraints">
+                                            <include reference="mco-Fi-rlc"/>
+                                        </mask>
+                                    </variation>
                                 </view>
                                 <blurEffect style="systemUltraThinMaterialLight"/>
                             </visualEffectView>
