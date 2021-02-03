@@ -84,7 +84,6 @@ class AudioPlayer: NSObject {
         self.currentMediaIndex = -1
         self.avAudioPlayer.pause()
         self.avAudioPlayer.removeAllItems()
-        
     }
     
     func fillItemToAudioPlayer() -> Bool {
